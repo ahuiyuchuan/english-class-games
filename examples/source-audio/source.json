@@ -1,0 +1,65 @@
+{
+  "author": "ahui",
+  "generatedAt": "2026-10-19T21:12:15.5960263Z",
+  "source": "Pre-generated recordings from installed Windows SAPI desktop voices",
+  "binding": "recording",
+  "note": "These recordings do not prove availability of an English WinRT voice.",
+  "items": [
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "knowledge.wav",
+      "sha256": "3598856c826d7b670d0b8580609f777238ce93bb646ba11dd6bed3a994b9cbb2",
+      "text": "knowledge"
+    },
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "challenge.wav",
+      "sha256": "efbfcc39a76b943cb985ffd1e28ea3f5d524aedae2760b3a0b5fb976e24c39f3",
+      "text": "challenge"
+    },
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "responsibility.wav",
+      "sha256": "19879ebcc3b895474cf53f0034530818c255afb5c59b1dab76ae5a0b21fee4b9",
+      "text": "responsibility"
+    },
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "cooperation.wav",
+      "sha256": "b1c3f01fc72d2fd319a23ff751b314fd19bfcbbeb420eee703ac58c8e56daaa9",
+      "text": "cooperation"
+    },
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "perseverance.wav",
+      "sha256": "137d26502632552a4082103787ee457912a08a8d122cd630ea0c0753cddae571",
+      "text": "perseverance"
+    },
+    {
+      "voiceName": "Microsoft Zira Desktop - English (United States)",
+      "language": "en-US",
+      "file": "take-part-in.wav",
+      "sha256": "886781d18607016771ba47b9027428d9b9b8b320e47b6c45037024f3cce93924",
+      "text": "take part in"
+    },
+    {
+      "voiceName": "Microsoft Huihui Desktop - Chinese (Simplified)",
+      "language": "zh-CN",
+      "file": "opening.wav",
+      "sha256": "c3e8f1a13f9811ecd93f19f963f59fa32fe4623589c7ce058b5f2109e139ca17",
+      "text": "准备好，跟着节奏开口。"
+    },
+    {
+      "voiceName": "Microsoft Huihui Desktop - Chinese (Simplified)",
+      "language": "zh-CN",
+      "file": "closing.wav",
+      "sha256": "ec682800060c22f6e5b86e0cb1ce9772e981b5cda6230864276452a7dd3b5e84",
+      "text": "练习完成，回顾今天的重点词。"
+    }
+  ]
+}

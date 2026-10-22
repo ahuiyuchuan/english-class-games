@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "English Class Games",
+  "version": "1.0.0",
+  "identifier": "com.ahui.english-class-games",
+  "build": {
+    "beforeDevCommand": "pnpm notices:native && pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build && pnpm notices:native",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "English Class Games · AI 英语课堂",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 720,
+        "minHeight": 480,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost data: blob:; media-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:11434 https://api.github.com; worker-src 'self' blob:; object-src 'none'; base-uri 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.png", "icons/icon.ico"],
+    "resources": {
+      "../resources/dictionary/": "resources/dictionary/",
+      "../resources/licenses/": "resources/licenses/",
+      "../resources/desktop-distribution/tts/": "resources/tts/",
+      "../resources/music/": "resources/music/",
+      "../resources/ATTRIBUTION.txt": "resources/ATTRIBUTION.txt",
+      "../resources/LICENSE-SLOGAN-TEMPLATES.txt": "resources/LICENSE-SLOGAN-TEMPLATES.txt",
+      "../resources/THIRD-PARTY-NOTICES.txt": "resources/THIRD-PARTY-NOTICES.txt",
+      "../resources/NATIVE-THIRD-PARTY-NOTICES.txt": "resources/NATIVE-THIRD-PARTY-NOTICES.txt",
+      "../resources/desktop-distribution/source/": "resources/source/",
+      "../resources/icons/": "resources/icons/"
+    },
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"],
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installerHooks": "installer-hooks.nsh"
+      }
+    },
+    "license": "GPL-3.0-only",
+    "licenseFile": "../LICENSE"
+  }
+}

@@ -1,0 +1,10 @@
+# Author: ahui
+# 与当前已验证的开发环境保持一致；依赖具体版本由 pnpm-lock.yaml 固定。
+[tools]
+node = "24.18.1"
+pnpm = "11.18.0"
+python = "3.13.14"
+rust = "1.99.1"
+
+[env]
+PYTHONIOENCODING = "utf-8"

@@ -1,0 +1,87 @@
+# Author: ahui. Validate real Windows authoring and standalone file:// classrooms.
+name: CI
+
+on:
+  # First publication has no downloadable resources until its assets are verified.
+  # Run the full locked-resource matrix after publication, on PRs or by dispatch.
+  release:
+    types: [published]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.1
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.18.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13.14
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.99.1
+          components: rustfmt, clippy
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Restore pinned offline resources
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $lock = Get-Content -Raw -Encoding UTF8 release-resources.json | ConvertFrom-Json
+          $archive = Join-Path $env:RUNNER_TEMP $lock.asset
+          Invoke-WebRequest -Uri "https://github.com/ahuiyuchuan/english-class-games/releases/download/v1.0.0/$($lock.asset)" -OutFile $archive
+          pnpm resources:prepare -- --archive $archive
+          node scripts/prepare-source-inputs.mjs
+          node scripts/build-builtin-music.mjs
+      - name: Source and frontend checks
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          pnpm format:check
+          pnpm lint
+          pnpm typecheck
+          pnpm test --maxWorkers=1
+          pnpm build
+          node scripts/build-examples.mjs
+          node scripts/build-tempo-example.mjs
+          pnpm notices:native
+      - name: Native checks
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          cargo fmt --manifest-path src-tauri/Cargo.toml -- --check
+          cargo clippy --manifest-path src-tauri/Cargo.toml --locked --all-targets -- -D warnings
+          cargo test --manifest-path src-tauri/Cargo.toml --locked
+      - name: Browser and disconnected classroom regression
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          pnpm exec playwright install chromium
+          pnpm exec playwright test --workers=1
+          pnpm exec playwright test --config playwright.portable.config.ts --workers=1
+      - name: Retain failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: validation-${{ github.sha }}
+          path: test-results/
+          retention-days: 14

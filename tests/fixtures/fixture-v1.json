@@ -1,0 +1,37 @@
+{
+  "author": "ahui",
+  "version": "fixture-v1",
+  "source": "受控教学义项夹具",
+  "text": "Students face challenges and take part in a research project called Novex to build knowledge.",
+  "dictionary": [
+    { "english": "knowledge", "partOfSpeech": "n.", "meaning": "知识", "forms": [] },
+    {
+      "english": "challenge",
+      "partOfSpeech": "n.",
+      "meaning": "挑战",
+      "forms": ["challenges"]
+    },
+    {
+      "english": "challenge",
+      "partOfSpeech": "v.",
+      "meaning": "质疑",
+      "forms": ["challenges"]
+    },
+    { "english": "take part in", "partOfSpeech": "phr.", "meaning": "参加", "forms": [] },
+    { "english": "and", "partOfSpeech": "conj.", "meaning": "和", "forms": [] }
+  ],
+  "selected": [
+    { "english": "challenges", "partOfSpeech": "n.", "meaning": "挑战" },
+    { "english": "take part in", "partOfSpeech": "phr.", "meaning": "参加" },
+    { "english": "knowledge", "partOfSpeech": "n.", "meaning": "知识" }
+  ],
+  "timing": {
+    "bpm": 100,
+    "audioDurationMs": 900,
+    "sampleRate": 48000,
+    "singleWordMs": 7200,
+    "twoWordsSameSectionMs": 12600,
+    "twoWordsSeparateSectionsMs": 13200,
+    "selectedThreeSameSectionMs": 19200
+  }
+}

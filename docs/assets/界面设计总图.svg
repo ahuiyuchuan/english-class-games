@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1440" viewBox="0 0 1800 1440" role="img" aria-labelledby="title description">
+  <!-- 作者：ahui。V1.0 当前设计示意；配套 PNG 由本 SVG 渲染，不作为软件实测截图。 -->
+  <title id="title">english-class-games 游戏化界面设计总图</title>
+  <desc id="description">面向高中英语教师、支持 Windows 10 和 11 的规则驱动 AI 平台。深蓝游戏启动器串联材料确认、智能制作、可解释编辑和自动节奏课堂。默认自动运行，示范两拍接跟读两拍依次经过四个拍垫；离线单 HTML 可携带。无大模型、麦克风识别或学生评分。本图为设计示意，不表示软件已经实现或验收通过。</desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1800" y2="1440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080E1C"/><stop offset="0.52" stop-color="#12152F"/><stop offset="1" stop-color="#060B18"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#17243C"/><stop offset="1" stop-color="#101A2D"/>
+    </linearGradient>
+    <linearGradient id="energy" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#54E5FF"/><stop offset="0.52" stop-color="#9B7CFF"/><stop offset="1" stop-color="#FF7EB6"/>
+    </linearGradient>
+    <radialGradient id="aura">
+      <stop stop-color="#9B7CFF" stop-opacity="0.27"/><stop offset="1" stop-color="#9B7CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <clipPath id="stageClip"><rect x="904" y="800" width="848" height="450" rx="20"/></clipPath>
+    <symbol id="portal" viewBox="0 0 360 360">
+      <circle cx="180" cy="180" r="176" fill="url(#aura)"/>
+      <ellipse cx="180" cy="180" rx="155" ry="52" transform="rotate(-27 180 180)" fill="none" stroke="#54E5FF" stroke-opacity="0.6"/>
+      <ellipse cx="180" cy="180" rx="132" ry="55" transform="rotate(35 180 180)" fill="none" stroke="#9B7CFF" stroke-opacity="0.6"/>
+      <circle cx="180" cy="180" r="132" fill="none" stroke="url(#energy)" stroke-width="2"/>
+      <circle cx="180" cy="180" r="123" fill="none" stroke="#54E5FF" stroke-width="4" stroke-dasharray="2 14"/>
+      <path d="M180 48A132 132 0 0 1 312 180M180 312A132 132 0 0 1 48 180" fill="none" stroke="#54E5FF" stroke-width="5"/>
+      <path d="m180 78 88 51v102l-88 51-88-51V129Z" fill="#12152F" stroke="#9B7CFF" stroke-width="2"/>
+      <circle cx="180" cy="78" r="5" fill="#C6F76B"/><circle cx="268" cy="231" r="5" fill="#FF7EB6"/>
+      <ellipse cx="180" cy="312" rx="112" ry="25" fill="#54E5FF" fill-opacity="0.06" stroke="#9B7CFF"/>
+      <ellipse cx="180" cy="312" rx="76" ry="14" fill="none" stroke="#54E5FF" stroke-opacity="0.7"/>
+    </symbol>
+    <style>
+      text { font-family: 'Segoe UI', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif; fill: #F1F5FF; }
+      .title { font-size: 27px; font-weight: 800; }
+      .section { font-size: 24px; font-weight: 700; }
+      .body { font-size: 18px; }
+      .small { font-size: 15px; }
+      .muted { fill: #B1BED6; }
+      .cyan { fill: #54E5FF; }
+      .purple { fill: #C9B5FF; }
+      .dark { fill: #081326; }
+      .panel { fill: url(#panel); stroke: #293C59; }
+      .card { fill: #101A2D; stroke: #6C819F; }
+    </style>
+  </defs>
+  <rect width="1800" height="1440" fill="url(#page)"/>
+  <circle cx="1500" cy="180" r="400" fill="url(#aura)"/>
+  <circle cx="360" cy="1180" r="400" fill="url(#aura)"/>
+  <g fill="#54E5FF" opacity="0.55">
+    <circle cx="34" cy="180" r="2"/><circle cx="890" cy="325" r="2"/><circle cx="1768" cy="560" r="2"/>
+    <circle cx="888" cy="1190" r="2"/><circle cx="410" cy="1365" r="2"/><circle cx="1570" cy="1300" r="2"/>
+  </g>
+  <text x="48" y="68" font-size="40" font-weight="900">english-class-games</text>
+  <text x="50" y="108" class="body muted">高中英语 · Windows 10 / 11 x64 · 游戏化界面设计总图</text>
+  <rect x="1316" y="42" width="192" height="38" rx="8" fill="#211B3B" stroke="#9B7CFF"/>
+  <text x="1412" y="67" class="body purple" text-anchor="middle">规则驱动 AI</text>
+  <rect x="1524" y="42" width="228" height="38" rx="8" fill="#101A2D" stroke="#6C819F"/>
+  <text x="1638" y="67" class="small muted" text-anchor="middle">V1.0 · 设计示意，非实测截图</text>
+  <text x="1752" y="110" class="small muted" text-anchor="end">作者：ahui · 2026-10-20</text>
+  <rect x="48" y="144" width="1704" height="54" rx="12" fill="#111B2F" stroke="#293C59"/>
+  <text x="82" y="178" class="body"><tspan class="cyan">确认教学材料</tspan><tspan>　→　</tspan><tspan class="purple">一键制作配音与编排</tspan><tspan>　→　可解释编辑　→　</tspan><tspan class="cyan">自动游戏课堂</tspan><tspan>　→　单 HTML 离线携带</tspan></text>
+
+  <!-- 01：工作台围绕真实制作成果，不展示假模型思考或学生统计。 -->
+  <text x="48" y="238" class="section">01　AI 游戏工作台</text>
+  <text x="872" y="238" class="small muted" text-anchor="end">统一入口 · 真实成果</text>
+  <rect x="48" y="260" width="824" height="450" rx="20" class="panel"/>
+  <path d="M196 280V690" stroke="#293C59"/>
+  <text x="72" y="304" class="title cyan">ECG</text>
+  <rect x="60" y="328" width="124" height="40" rx="8" fill="#20334F"/>
+  <text x="76" y="354" class="small cyan">AI 工作台</text>
+  <text x="76" y="406" class="small muted">游戏库</text>
+  <text x="76" y="458" class="small muted">教学材料</text>
+  <text x="76" y="510" class="small muted">我的课件</text>
+  <text x="76" y="562" class="small muted">资源与设置</text>
+  <text x="76" y="681" class="small muted">本地保存</text>
+  <text x="222" y="308" class="small purple">知识 + 规则 + 模板 + 系统配音</text>
+  <text x="222" y="363" class="title">让教学材料</text>
+  <text x="222" y="404" class="title cyan">成为一场节奏游戏</text>
+  <text x="222" y="443" class="small muted">有依据的候选、可修改的编排</text>
+  <rect x="222" y="470" width="146" height="48" rx="9" fill="#7CBAFF"/>
+  <text x="295" y="501" class="body dark" font-weight="700" text-anchor="middle">智能制作</text>
+  <use href="#portal" x="506" y="304" width="340" height="340"/>
+  <text x="676" y="468" font-size="28" font-weight="900" text-anchor="middle">AI BEAT</text>
+  <text x="676" y="501" class="small cyan" text-anchor="middle">智能制作示意</text>
+  <rect x="514" y="345" width="102" height="30" rx="5" fill="#101A2D" stroke="#54E5FF"/>
+  <text x="565" y="365" class="small" text-anchor="middle">材料</text>
+  <rect x="756" y="522" width="86" height="30" rx="5" fill="#101A2D" stroke="#FF7EB6"/>
+  <text x="799" y="542" class="small" text-anchor="middle">声音</text>
+  <rect x="222" y="590" width="620" height="91" rx="12" fill="#101A2D" stroke="#293C59"/>
+  <text x="240" y="621" class="body">最近课件：Unit 3 · Words in Action</text>
+  <text x="240" y="652" class="small muted">准备状态与实际时长　　继续编辑 / 检查导出</text>
+
+  <!-- 02：材料与编辑保留教师决定，建议给出依据及修改范围。 -->
+  <text x="904" y="238" class="section">02　一键制作与可解释编辑</text>
+  <text x="1752" y="238" class="small muted" text-anchor="end">确认 → 制作 → 编辑</text>
+  <rect x="904" y="260" width="848" height="450" rx="20" class="panel"/>
+  <text x="928" y="299" class="body">Unit 3 · 已保存</text>
+  <rect x="1566" y="276" width="162" height="40" rx="8" fill="#7CBAFF"/>
+  <text x="1647" y="302" class="small dark" font-weight="700" text-anchor="middle">导出课堂文件</text>
+  <rect x="928" y="334" width="218" height="252" rx="12" fill="#111B2F" stroke="#293C59"/>
+  <text x="944" y="365" class="small muted">段落与词条</text>
+  <rect x="940" y="382" width="194" height="66" rx="8" fill="#20334F" stroke="#54E5FF"/>
+  <text x="952" y="407" class="body">knowledge</text>
+  <text x="952" y="434" class="small muted">知识 · 2 轮 · 声音就绪</text>
+  <text x="952" y="480" class="body">challenge</text>
+  <text x="952" y="508" class="small muted">挑战 · 教师已确认</text>
+  <text x="952" y="553" class="body">take part in</text>
+  <rect x="1162" y="334" width="332" height="252" rx="12" fill="#060B18" stroke="#293C59"/>
+  <text x="1178" y="361" class="small muted">静态预览 · 不自动发声</text>
+  <circle cx="1328" cy="463" r="86" fill="url(#aura)" stroke="#9B7CFF" stroke-opacity="0.5"/>
+  <text x="1328" y="459" font-size="36" font-weight="800" text-anchor="middle">knowledge</text>
+  <text x="1328" y="499" font-size="23" class="muted" text-anchor="middle">知识</text>
+  <text x="1328" y="559" class="small cyan" text-anchor="middle">100 BPM · 节奏方块 · 自动</text>
+  <rect x="1510" y="334" width="218" height="252" rx="12" fill="#111B2F" stroke="#293C59"/>
+  <text x="1526" y="365" class="small muted">属性 / 智能建议</text>
+  <text x="1526" y="410" class="body">练习轮数　2 轮</text>
+  <text x="1526" y="453" class="body">示范 2 拍</text>
+  <text x="1526" y="485" class="body">跟读 2 拍</text>
+  <text x="1526" y="531" class="small purple">依据可查看</text>
+  <text x="1526" y="560" class="small muted">可手改 / 锁定 / 撤销</text>
+  <rect x="928" y="604" width="800" height="77" rx="10" fill="#211B3B" stroke="#9B7CFF" stroke-opacity="0.55"/>
+  <text x="946" y="634" class="body purple">短语建议：跟读 2 拍 → 3 拍　　依据：短语多留 1 拍</text>
+  <text x="946" y="661" class="small muted">先看影响再接受；手改与锁定值受到保护，未接受不写回。</text>
+
+  <!-- 03：开场布局只展示真实课件摘要；装饰不推进课堂。 -->
+  <text x="48" y="778" class="section">03　关卡开场</text>
+  <text x="872" y="778" class="small muted" text-anchor="end">低速氛围 · 主动作清晰</text>
+  <rect x="48" y="800" width="824" height="450" rx="20" class="panel"/>
+  <text x="74" y="837" class="small">Unit 3 · Words in Action</text>
+  <text x="846" y="837" class="small cyan" text-anchor="end">离线就绪</text>
+  <text x="86" y="902" class="small cyan">AI 智能编排 · 单词节拍</text>
+  <text x="86" y="956" font-size="39" font-weight="900">让每个单词，</text>
+  <text x="86" y="1006" font-size="39" font-weight="900" class="cyan">都有节奏。</text>
+  <text x="86" y="1051" class="body">Unit 3 · Words in Action</text>
+  <text x="86" y="1084" class="small muted">真实词数 / 编排时长 / BPM / 推进方式</text>
+  <text x="86" y="1116" class="small muted">开始后自动示范、跟读、切词与收尾</text>
+  <rect x="86" y="1146" width="126" height="48" rx="9" class="card"/>
+  <text x="149" y="1177" class="body" text-anchor="middle">测试声音</text>
+  <rect x="224" y="1146" width="148" height="48" rx="9" fill="#83C8FF"/>
+  <text x="298" y="1177" class="body dark" font-weight="700" text-anchor="middle">开始课堂</text>
+  <use href="#portal" x="480" y="854" width="352" height="352"/>
+  <text x="656" y="1019" font-size="34" font-weight="900" text-anchor="middle">WORD</text>
+  <text x="656" y="1060" font-size="34" font-weight="900" class="cyan" text-anchor="middle">BEAT</text>
+  <rect x="486" y="896" width="126" height="34" rx="5" fill="#101A2D" stroke="#54E5FF"/>
+  <text x="549" y="918" class="small" text-anchor="middle">knowledge</text>
+  <rect x="706" y="1098" width="126" height="34" rx="5" fill="#101A2D" stroke="#FF7EB6"/>
+  <text x="769" y="1120" class="small" text-anchor="middle">challenge</text>
+  <text x="86" y="1225" class="small muted">Space 暂停 / 继续　　← → 切词　　R 重读</text>
+
+  <!-- 04：本图固定示范两拍、跟读两拍，仅用于说明跨阶段连续拍序。 -->
+  <text x="904" y="778" class="section">04　全自动节奏课堂</text>
+  <text x="1752" y="778" class="small muted" text-anchor="end">真实拍序 · 粒子反馈 · 教师可控</text>
+  <rect x="904" y="800" width="848" height="450" rx="20" fill="#060B18" stroke="#293C59"/>
+  <g clip-path="url(#stageClip)">
+    <circle cx="1330" cy="1025" r="270" fill="url(#aura)"/>
+    <path d="M904 1124H1752M904 1154H1752M904 1196H1752M904 1250H1752M1328 1050 928 1250M1328 1050 1100 1250M1328 1050 1284 1250M1328 1050 1470 1250M1328 1050 1710 1250" stroke="#9B7CFF" stroke-opacity="0.2"/>
+    <path d="M936 852 1030 1160 904 1160Z" fill="#54E5FF" fill-opacity="0.045"/>
+    <path d="M1720 850 1636 1160 1752 1160Z" fill="#FF7EB6" fill-opacity="0.045"/>
+    <g fill="#54E5FF" opacity="0.6"><circle cx="962" cy="950" r="2"/><circle cx="1094" cy="1020" r="2"/><circle cx="1635" cy="933" r="2"/><circle cx="1710" cy="1060" r="2"/></g>
+    <path d="m962 950 90-24 42 94M1635 933l56-17" fill="none" stroke="#54E5FF" stroke-opacity="0.22"/>
+  </g>
+  <text x="928" y="837" class="small">Unit 3 · 第 1 组</text>
+  <text x="1728" y="837" class="small cyan" text-anchor="end">自动推进 · 1 / 6 词</text>
+  <rect x="1112" y="858" width="144" height="28" rx="5" fill="#20334F" stroke="#54E5FF"/>
+  <text x="1184" y="878" class="small" text-anchor="middle">01 knowledge</text>
+  <text x="1282" y="878" class="small muted">02 challenge　　03 responsibility</text>
+  <rect x="1281" y="911" width="94" height="30" rx="6" fill="#5EECC8"/>
+  <text x="1328" y="932" class="small dark" font-weight="700" text-anchor="middle">跟读</text>
+  <text x="1328" y="1002" font-size="63" font-weight="900" text-anchor="middle">knowledge</text>
+  <text x="1328" y="1045" font-size="28" class="muted" text-anchor="middle">知识</text>
+  <g>
+    <path d="m1088 1097 94-5 8 12v40l-94 5-8-10Z" fill="#173D4C"/>
+    <path d="m1088 1097 94-5 8 12-94 5Z" fill="#54E5FF" fill-opacity="0.6"/>
+    <text x="1139" y="1135" class="body cyan" text-anchor="middle">1</text>
+    <path d="m1214 1086 94-5 8 12v40l-94 5-8-10Z" fill="#30254E"/>
+    <path d="m1214 1086 94-5 8 12-94 5Z" fill="#9B7CFF" fill-opacity="0.65"/>
+    <text x="1265" y="1124" class="body purple" text-anchor="middle">2</text>
+    <path d="m1340 1097 94-5 8 12v40l-94 5-8-10Z" fill="#7A355E"/>
+    <path d="m1340 1097 94-5 8 12-94 5Z" fill="#FF7EB6"/>
+    <ellipse cx="1390" cy="1145" rx="67" ry="16" fill="none" stroke="#FF7EB6" stroke-width="2"/>
+    <path d="M1360 1098V1070M1392 1094V1056M1420 1095V1068" stroke="#FF7EB6" stroke-width="3" stroke-opacity="0.6"/>
+    <path d="m1350 1070-5-7m90 15 8-7m-41-20 3-8" stroke="#FF7EB6" stroke-width="3"/>
+    <text x="1391" y="1135" class="body" text-anchor="middle">3</text>
+    <path d="m1466 1086 94-5 8 12v40l-94 5-8-10Z" fill="#263A31"/>
+    <path d="m1466 1086 94-5 8 12-94 5Z" fill="#C6F76B" fill-opacity="0.35"/>
+    <text x="1517" y="1124" class="body muted" text-anchor="middle">4</text>
+  </g>
+  <text x="1328" y="1182" class="small muted" text-anchor="middle">示范 1 → 2　　跟读 3 → 4　｜　超过四拍继续循环</text>
+  <rect x="928" y="1200" width="800" height="34" rx="7" fill="#192841" stroke="#293C59"/>
+  <text x="1328" y="1223" class="small" text-anchor="middle">上一词　　暂停 / 继续　　下一词　　重读　　课堂设置　　全屏</text>
+
+  <rect x="48" y="1292" width="1704" height="96" rx="14" fill="#111B2F" stroke="#293C59"/>
+  <text x="76" y="1326" class="body"><tspan class="cyan">在家备课 → 一个 HTML 带到教室</tspan><tspan>　｜　内嵌声音与播放器，断网打开即可上课</tspan></text>
+  <text x="76" y="1361" class="small muted">课堂默认自动运行，教师可暂停、重读、调速；可编辑包用于换机继续备课。无大模型、麦克风识别或学生评分。</text>
+  <text x="1752" y="1421" class="small muted" text-anchor="end">尺寸、交互与验收以 02 / 03 / 05 文档为准；本图不代替实际画面与运行证据。</text>
+</svg>

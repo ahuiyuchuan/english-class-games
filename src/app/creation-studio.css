@@ -1,0 +1,409 @@
+/**
+ * 智能制作工作站：步骤是任务轨道，预设是可选择的模式卡，编辑区以课堂舞台为主。
+ * 动效只表达选择、焦点和装饰，制作结果始终来自真实数据；不另设模拟进度。
+ * @author ahui
+ */
+.wizard-page .wizard-heading {
+  padding: 4px 0 0;
+}
+.wizard-page .wizard-heading h1 {
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.04em;
+}
+.wizard-page .wizard-heading .page-eyebrow {
+  margin-bottom: 12px;
+}
+.wizard-page .steps {
+  padding: 0;
+  gap: 0;
+  border: 1px solid color-mix(in srgb, var(--game-cyan) 26%, var(--divider));
+  border-radius: var(--radius-panel);
+  background: linear-gradient(110deg, var(--game-panel-light), var(--game-panel));
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.wizard-page .step {
+  position: relative;
+  gap: 13px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 0;
+  font-weight: 600;
+  transition:
+    background-color 200ms,
+    color 200ms,
+    box-shadow 200ms;
+}
+.wizard-page .step + .step {
+  border-left: 1px solid var(--divider);
+}
+.wizard-page .step > span {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--game-ink);
+  font-size: 12px;
+}
+.wizard-page .step[aria-current='step'] {
+  color: var(--game-cyan);
+  background: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--game-cyan) 9%, var(--game-panel)),
+    var(--game-panel-light)
+  );
+  box-shadow: inset 0 -3px var(--game-cyan);
+}
+.wizard-page .step[aria-current='step'] > span {
+  color: var(--on-accent);
+  background: var(--game-cyan);
+  border-color: var(--game-cyan);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--game-cyan) 25%, transparent);
+}
+.wizard-page .step[data-complete='true'] > span {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 50%, var(--divider));
+  background: var(--success-surface);
+}
+.studio-plan {
+  border-radius: var(--radius-panel);
+  padding: 26px;
+  gap: 24px;
+}
+.studio-plan > .row > h2 {
+  font-size: 23px;
+  letter-spacing: -0.03em;
+  font-weight: 750;
+}
+.studio-plan > .grid-three {
+  gap: 16px;
+}
+.wizard-page .preset {
+  position: relative;
+  min-height: 205px;
+  gap: 10px;
+  padding: 23px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--game-cyan) 25%, var(--control-border));
+  border-radius: var(--radius-panel);
+  background: linear-gradient(145deg, var(--game-panel-light), var(--game-panel));
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+  transition:
+    border-color 220ms,
+    background-color 220ms,
+    box-shadow 220ms,
+    transform 220ms var(--game-ease);
+}
+.wizard-page .preset::after {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: -25px;
+  right: -24px;
+  border: 1px solid color-mix(in srgb, var(--game-cyan) 14%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 18px color-mix(in srgb, var(--game-cyan) 3%, transparent),
+    0 0 0 38px color-mix(in srgb, var(--game-cyan) 2%, transparent);
+  pointer-events: none;
+}
+.wizard-page .preset > strong {
+  font-size: 19px;
+  color: var(--text);
+  font-weight: 750;
+}
+.wizard-page .preset > .muted {
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+.wizard-page .preset > small {
+  font-size: 11px;
+}
+.wizard-page .preset:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 25%);
+}
+.wizard-page .preset:active {
+  transform: translateY(-1px);
+}
+.wizard-page .preset[aria-checked='true'] {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--game-cyan) 10%, var(--game-panel-light)),
+    var(--game-panel)
+  );
+  border-color: var(--game-cyan);
+  box-shadow:
+    inset 0 3px var(--game-cyan),
+    0 0 28px color-mix(in srgb, var(--game-cyan) 9%, transparent);
+}
+.studio-preset-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  color: var(--game-cyan);
+  background: color-mix(in srgb, var(--game-cyan) 12%, var(--game-ink));
+  border: 1px solid color-mix(in srgb, var(--game-cyan) 35%, var(--divider));
+  border-radius: var(--radius-control);
+  margin-bottom: 5px;
+  box-shadow: 0 8px 18px rgb(0 0 0 / 15%);
+}
+.wizard-page .preset:nth-child(2) .studio-preset-icon {
+  color: var(--ai-text);
+  background: var(--ai-surface);
+  border-color: var(--game-cyan);
+}
+.wizard-page .preset:nth-child(3) .studio-preset-icon {
+  color: var(--game-lime);
+  background: color-mix(in srgb, var(--game-lime) 8%, var(--game-ink));
+  border-color: color-mix(in srgb, var(--game-lime) 35%, var(--divider));
+}
+.studio-result .studio-result-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(165px, 100%), 1fr));
+  gap: 12px;
+}
+.studio-result .studio-result-metrics > span {
+  padding: 22px 18px;
+  border: 1px solid color-mix(in srgb, var(--game-cyan) 22%, var(--divider));
+  border-radius: var(--radius-panel);
+  background: linear-gradient(140deg, var(--game-panel-light), var(--game-ink));
+  color: var(--text);
+  box-shadow: inset 0 2px color-mix(in srgb, var(--game-cyan) 20%, transparent);
+  font-size: 14px;
+}
+.studio-result {
+  border-radius: var(--radius-panel);
+}
+.studio-result[data-busy='true'] {
+  border-color: var(--game-cyan);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--game-cyan) 12%, transparent);
+}
+/* 编辑时先看到成品舞台，再调整设置；视觉重排不复制字段，也不制造第二份状态。 */
+.editor-topbar {
+  border-bottom-color: color-mix(in srgb, var(--game-cyan) 25%, var(--divider));
+  background: linear-gradient(110deg, var(--game-panel), var(--game-ink));
+}
+.editor-topbar .editor-name {
+  border-color: color-mix(in srgb, var(--game-cyan) 30%, var(--control-border));
+  font-weight: 700;
+}
+.editor-entries {
+  border-radius: var(--radius-panel);
+  background: linear-gradient(160deg, var(--game-panel-light), var(--game-panel));
+}
+.editor-entries > .row:first-child {
+  padding: 7px 8px 12px;
+}
+.entry-row {
+  transition:
+    background-color 160ms,
+    box-shadow 160ms,
+    border-color 160ms;
+}
+.entry-row:hover {
+  background: color-mix(in srgb, var(--game-cyan) 9%, var(--game-panel));
+}
+.entry-row[data-current='true'] {
+  box-shadow:
+    inset 3px 0 var(--game-cyan),
+    0 3px 14px rgb(0 0 0 / 12%);
+}
+.entry-main {
+  min-height: 44px;
+}
+.segment-header {
+  margin-top: 8px;
+}
+.property-panel {
+  border-radius: var(--radius-panel);
+}
+.property-panel > .row:first-child > h3 {
+  font-size: 17px;
+}
+#lesson-settings {
+  border-radius: var(--radius-panel);
+  padding: 20px;
+}
+#lesson-settings > .row:first-child > h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.preview-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      color-mix(in srgb, var(--game-cyan) 19%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      color-mix(in srgb, var(--game-cyan) 13%, transparent),
+      transparent 55%
+    ),
+    var(--background);
+  border-color: color-mix(in srgb, var(--game-cyan) 45%, var(--divider));
+  border-radius: var(--radius-panel);
+  box-shadow:
+    inset 0 0 65px color-mix(in srgb, var(--game-cyan) 6%, transparent),
+    0 15px 45px rgb(0 0 0 / 24%);
+}
+.preview-stage > :not(.ecg-atmosphere) {
+  z-index: 1;
+}
+.studio-preview-header {
+  align-self: stretch;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--game-cyan) 20%, var(--divider));
+}
+.preview-stage .teaching-content__word {
+  color: var(--text);
+}
+.studio-preview-footnote {
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+}
+.studio-preview-trail {
+  align-self: stretch;
+}
+.studio-preview-trail .ecg-beat-trail--blocks .ecg-beat-block {
+  height: 54px;
+  padding: 6px;
+}
+.studio-preview-trail .ecg-beat-word {
+  font-size: 14px;
+}
+@media (min-width: 1600px) {
+  .editor-center > .preview-stage {
+    height: 420px;
+  }
+}
+@media (max-width: 999px) {
+  .wizard-page .steps {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .wizard-page .step {
+    min-width: min(180px, 100%);
+    padding: 15px;
+  }
+  .wizard-page .preset {
+    min-height: 180px;
+  }
+  .studio-plan {
+    padding: 20px;
+  }
+}
+@media (max-width: 640px) {
+  .wizard-page .step {
+    min-width: 0;
+    gap: 7px;
+    padding: 12px 8px;
+    font-size: 10px;
+  }
+  .wizard-page .step > span {
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+  }
+  .studio-plan {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wizard-page *,
+  .preview-stage * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .wizard-page .preset:hover {
+    transform: none;
+  }
+}
+
+/* A preparation task needs working space; the homepage owns the large hero. */
+.page.wizard-page {
+  gap: 16px;
+  padding-top: 16px;
+}
+.wizard-page .wizard-heading {
+  margin-bottom: 0;
+  padding-bottom: 12px;
+}
+.wizard-page .wizard-heading p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+@media (max-height: 600px) {
+  .page.wizard-page {
+    padding-top: 12px;
+    gap: 10px;
+  }
+  .wizard-page .wizard-heading {
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  .wizard-page .wizard-heading h1 {
+    font-size: 22px;
+  }
+  .wizard-page .wizard-heading p {
+    display: none;
+  }
+  .wizard-page .step {
+    padding: 8px 14px;
+    gap: 8px;
+  }
+  .wizard-page .step > span {
+    width: 28px;
+    height: 28px;
+  }
+  .wizard-page > .panel {
+    padding: 16px;
+  }
+  .wizard-page .import-panel {
+    gap: 12px;
+  }
+  .wizard-page .import-source-summary {
+    padding-bottom: 4px;
+  }
+  .wizard-page .import-panel[data-review='true'] .material-review {
+    max-height: 220px;
+  }
+}
+
+/* Task pages keep platform navigation compact. These selectors deliberately
+ * outrank the global short-window header rules without changing other pages. */
+.shell[data-page='wizard'] .topbar {
+  min-height: 48px;
+  padding-block: 2px;
+}
+.shell[data-page='wizard'] .browser-preview-notice {
+  padding-top: 8px !important;
+}
+.shell[data-page='wizard'] .browser-preview-notice .notice {
+  padding-block: 6px;
+  font-size: 12px;
+}
+.wizard-page > .panel:has(.import-panel[data-review='true']) {
+  padding: 16px;
+}
+.wizard-page .import-source-summary {
+  padding-bottom: 4px;
+}
+.wizard-page .import-panel[data-review='true'] .material-review {
+  max-height: clamp(220px, calc(100dvh - 520px), 520px);
+}

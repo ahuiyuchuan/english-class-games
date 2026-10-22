@@ -1,0 +1,32 @@
+{
+  "author": "ahui",
+  "version": 1,
+  "purpose": "阅读候选的默认折叠清单；不排除词条，不表示教学价值，教师重点优先展开。",
+  "words": [
+    "a",
+    "an",
+    "the",
+    "and",
+    "or",
+    "but",
+    "if",
+    "as",
+    "at",
+    "by",
+    "for",
+    "from",
+    "in",
+    "of",
+    "on",
+    "to",
+    "with",
+    "am",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being"
+  ]
+}

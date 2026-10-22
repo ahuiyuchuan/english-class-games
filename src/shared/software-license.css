@@ -1,0 +1,52 @@
+/* 共用低干扰许可入口；长文本有界滚动，不扩张课堂舞台。作者：ahui */
+.software-license {
+  max-width: 100%;
+  color: var(--text-muted, #a4b6cd);
+  font-size: 13px;
+  text-align: left;
+}
+.software-license summary {
+  cursor: pointer;
+  padding: 8px 4px;
+  color: var(--text, #e6f0ff);
+}
+.software-license summary:focus-visible {
+  outline: 2px solid var(--focus, #22d3ee);
+  outline-offset: 2px;
+}
+.software-license > div {
+  max-height: min(35vh, 340px);
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid var(--border, #334660);
+  border-radius: 10px;
+  background: var(--surface, #102238);
+}
+.software-license pre,
+.source-digest {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.software-license pre {
+  font-size: 12px;
+  max-height: 240px;
+  overflow: auto;
+}
+/* Classroom auxiliary controls share one row; expanded legal text can scroll
+   without requiring a second permanent row above the teaching start controls. */
+.ecg-lobby-legal-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+}
+.ecg-lobby-legal-row .ecg-shortcuts {
+  margin: 0;
+}
+.ecg-lobby-legal-row .software-license summary {
+  padding: 2px 4px;
+}
+.ecg-lobby-legal-row .software-license[open] {
+  flex-basis: 100%;
+}

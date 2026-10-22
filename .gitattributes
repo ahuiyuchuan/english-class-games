@@ -1,0 +1,15 @@
+# Author: ahui. Source uses UTF-8 without BOM and LF on every development host.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.wav binary
+*.mp3 binary
+*.zip binary
+*.gz binary
+*.exe binary
+*.dll binary
+*.onnx binary
+*.ecglesson binary
+# Reviewed third-party/resource hashes refer to exact bytes, including upstream EOL.
+/resources/** -text -whitespace

@@ -1,0 +1,55 @@
+/** 实际内容测量的共用教学区；只有本文本区可滚动，教师控制始终留在外部。 @author ahui */
+.teaching-content {
+  flex: 1 1 0%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable both-edges;
+  text-align: center;
+}
+
+.teaching-content__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.teaching-content__word,
+.teaching-content__meaning {
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.teaching-content__word {
+  font-size: var(--teaching-word-size, 144px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.teaching-content__meaning {
+  /* 中文与英文共用悬浮字形；清晰度来自字号、字重与对比度，不另加卡片容器。 */
+  font-size: var(--teaching-meaning-size, 64px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+/* 两种教学文字共用同一光影材质，静态编辑预览和离线课堂也保持一致。 */
+.teaching-content__word,
+.teaching-content__meaning {
+  text-shadow:
+    0 3px 0 color-mix(in srgb, var(--game-violet) 40%, var(--background)),
+    0 0 32px color-mix(in srgb, var(--game-cyan) 28%, transparent);
+}

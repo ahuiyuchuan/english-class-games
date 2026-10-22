@@ -1,0 +1,45 @@
+# Author: ahui
+# Desktop-only platform services. Game-specific rules remain in TypeScript modules.
+[package]
+name = "english-class-games"
+version = "1.0.0"
+edition = "2021"
+authors = ["ahui"]
+description = "Offline English classroom game authoring platform"
+license = "GPL-3.0-only"
+
+[lib]
+name = "english_class_games_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.37", features = ["bundled", "backup"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+sha2 = "0.10"
+semver = "1"
+base64 = "0.22"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+calamine = "0.31"
+csv = "1"
+encoding_rs = "0.8"
+rfd = "0.15"
+symphonia = { version = "0.5", features = ["mp3", "wav", "pcm", "isomp4", "aac"] }
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.61", features = ["Foundation", "Foundation_Collections", "Media_Core", "Media_SpeechSynthesis", "Storage_Streams", "Win32_System_WinRT", "Win32_Storage_FileSystem"] }
+winreg = "0.56"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true

@@ -1,0 +1,66 @@
+/* 备课与离线课堂共用的说明层；独立导入，避免便携端依赖整站样式。 Author: ahui. */
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.setting-label > label {
+  flex: 1;
+}
+button.setting-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 4px;
+  border: 1px solid var(--control-border);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  cursor: help;
+}
+button.setting-help:hover,
+button.setting-help[aria-expanded='true'] {
+  background: var(--selected);
+  border-color: var(--action-edge);
+  color: var(--text);
+}
+button.setting-help:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.setting-help-tip {
+  position: fixed;
+  z-index: 1200;
+  box-sizing: border-box;
+  width: 300px;
+  max-width: calc(100vw - 16px);
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--control-border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 8px 30px #0008;
+  font:
+    14px/1.6 system-ui,
+    sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.setting-help-tip strong {
+  color: var(--ai-text);
+}
+@media (pointer: coarse) {
+  button.setting-help {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+}

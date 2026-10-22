@@ -1,0 +1,37 @@
+# Author: ahui. 构建产物、缓存与本机数据不得进入源代码交付。
+node_modules/
+dist/
+dist-portable/
+src-tauri/target/
+target/
+playwright-report/
+test-results/
+coverage/
+.vite/
+src/portable/generated/
+.env
+*.local
+*.log
+
+# 本机证据及交付不进入源码；交付通过当前本地目录提供。
+validation/
+releases/
+src-tauri/gen/
+examples/*.html
+examples/*.ecglesson
+examples/validation/
+
+# 大型配音组件和对应源码归档由 release-resources.json 校验恢复。
+resources/tts/bin/
+resources/tts/model/
+resources/tts/licenses/sources/*.zip
+resources/tts/licenses/sources/*.tar.gz
+
+# Generated corresponding source packages; regenerate from original inputs.
+resources/source/
+resources/desktop-distribution*/
+resources/source-upstream/*.zip
+!resources/source-upstream/sheetjs-0.20.3.zip
+
+# Reproducible CC0 audio is generated from the owned synthesis script.
+resources/music/*.wav

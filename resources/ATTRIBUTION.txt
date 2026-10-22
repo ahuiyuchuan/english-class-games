@@ -1,0 +1,20 @@
+English Class Games · 教学内容与资源来源
+维护者：ahui
+
+高中词库基于 ECDICT，来源固定为：
+https://github.com/skywind3000/ECDICT
+bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+
+基础记录按 gk 标签筛选，补充的短语和独立教学义项见词库加工清单。
+筛选记录不等于逐项校对：未校对参考释文保留参考状态，教学义项由教师确认。
+分发版的记录数、校对范围、内容摘要与完整许可分别见 dictionary/source.json、
+dictionary/reviewed-senses.json 和 dictionary/LICENSE-ECDICT.txt。
+本项目不宣称词库匹配任何官方教材。
+
+内置口号模板由本项目编写，作者 ahui；许可见 LICENSE-SLOGAN-TEMPLATES.txt。
+教师输入、导入的教学内容和录音保留各自的来源与权利，不因打包改变归属。
+前端生产依赖的完整许可见 THIRD-PARTY-NOTICES.txt。
+
+公开版内置“课堂律动”由 ahui 使用振荡器和固定种子噪声合成，音频按 CC0-1.0 提供。
+完整许可、100 BPM网格和摘要见 music/LICENSE-CC0.txt、music/README.txt、music/source.json。
+教师另外导入的音乐保留各自权利。

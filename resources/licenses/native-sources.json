@@ -1,0 +1,230 @@
+{
+  "author": "ahui",
+  "packages": {
+    "alloc-stdlib@0.3.0": {
+      "declaredLicense": "BSD-3-Clause",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "alloc-stdlib-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/0a81fd6928ea3b33c8cd484aa4575d50ffb98012/LICENSE",
+          "sha256": "c0c56f26d9c051cac4d200c34c84e7ae9aaa853e01a982a1df08b09931e518ae"
+        }
+      ]
+    },
+    "atoi_simd@0.16.1": {
+      "declaredLicense": "MIT OR Apache-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "atoi-simd-LICENSE-APACHE.txt",
+          "source": "https://raw.githubusercontent.com/RoDmitry/atoi_simd/a07b61bc6d7cd704fe31ddb7db9f804436ed7a0f/LICENSE-APACHE",
+          "sha256": "18d98423c078c531baafb7ed6248639fca1a45c718f2fd2bbf249c56127b2e3b"
+        },
+        {
+          "file": "atoi-simd-LICENSE-MIT.txt",
+          "source": "https://raw.githubusercontent.com/RoDmitry/atoi_simd/a07b61bc6d7cd704fe31ddb7db9f804436ed7a0f/LICENSE-MIT",
+          "sha256": "f155f18a8148391a82157dae8f5a300bb32fec6a338ae19dcb52de6f2f3dbe21"
+        }
+      ]
+    },
+    "selectors@0.38.0": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The crate declares MPL-2.0 and embeds its standard header in lib.rs, but omits the full license. The authoritative Mozilla version 2.0 text is retained here.",
+      "files": [
+        {
+          "file": "MPL-2.0.txt",
+          "source": "https://www.mozilla.org/media/MPL/2.0/index.txt",
+          "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+        }
+      ]
+    },
+    "symphonia@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-bundle-flac@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-bundle-mp3@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-codec-adpcm@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-codec-pcm@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-codec-vorbis@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-core@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-format-mkv@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-format-ogg@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-format-riff@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-metadata@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-utils-xiph@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "webview2-com@0.39.1": {
+      "declaredLicense": "MIT",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "webview2-com-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/wravery/webview2-rs/edc2caf886175ccaebe86078c9cfe1ae2a187328/LICENSE",
+          "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73"
+        }
+      ]
+    },
+    "webview2-com-macros@0.8.1": {
+      "declaredLicense": "MIT",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "webview2-com-macros-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/wravery/webview2-rs/dffa41a8a46d3f5565eefbff2de57d38d399f158/LICENSE",
+          "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73"
+        }
+      ]
+    },
+    "webview2-com-sys@0.39.1": {
+      "declaredLicense": "MIT",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "webview2-com-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/wravery/webview2-rs/edc2caf886175ccaebe86078c9cfe1ae2a187328/LICENSE",
+          "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73"
+        }
+      ]
+    },
+    "symphonia-codec-aac@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    },
+    "symphonia-format-isomp4@0.5.5": {
+      "declaredLicense": "MPL-2.0",
+      "note": "The published crate omits a root license; this text is retained from the repository commit recorded by its .cargo_vcs_info.json.",
+      "files": [
+        {
+          "file": "symphonia-LICENSE.txt",
+          "source": "https://raw.githubusercontent.com/pdeljanov/Symphonia/6d533f26150953a882a6a111ebd13f0abf7129d5/LICENSE",
+          "sha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30"
+        }
+      ]
+    }
+  }
+}

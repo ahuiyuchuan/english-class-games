@@ -1,0 +1,22 @@
+name: 问题反馈
+description: 报告可复现的备课或课堂问题
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: 软件、Windows及浏览器版本
+      placeholder: '例如：1.0.0，Windows 11 x64，Edge版本…'
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤、实际结果和期望结果
+      description: 注明练习模式；请先脱敏，不要上传学生信息、密钥或完整资料库。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图或其他证据
+      description: 音视频和课件可能包含私人教学内容，请先确认可以分享。

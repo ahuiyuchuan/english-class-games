@@ -1,0 +1,39 @@
+English Class Games bundled offline speech component
+Maintainer: ahui. Product 1.0.0. 
+
+This optional speech production process is separate from the React/Tauri classroom
+runtime. Only generated WAV files travel in lessons and offline HTML. No model or
+inference library is needed on the classroom computer.
+
+Engine: sherpa-onnx 1.13.8, official Windows x64 shared MT Release.
+Source: https://github.com/k2-fsa/sherpa-onnx/releases/tag/v1.13.8
+Upstream core license: Apache-2.0. The distributed C API library also incorporates
+eSpeak NG (GPL-3.0-or-later) and other dependencies. Our adapter is GPL-3.0-only; this linked
+speech worker/library combination is conveyed under GPL version 3; do not
+describe the complete binary as Apache-only. There is no warranty. You may modify
+and redistribute it under the accompanying license terms.
+
+The complete corresponding source and build recipe are provided in the same
+version's English-Class-Games-v1.0.0-Source.zip release asset, under
+resources/tts/licenses/sources and resources/tts/licenses/worker. No login is
+required. The installer retains original license texts and exact source access
+details under resources/source; it does not duplicate the build archives.
+When conveying the installer on physical media, include that source ZIP too.
+Upstream CMake files record dependency versions, hashes and build options.
+The worker is our own UTF-16-path/UTF-8-text adapter; the upstream libraries are
+unmodified. No eSpeak voices/data are used by the selected Melo lexicon model.
+The presence of linked code still requires its license obligations to be honored.
+
+ONNX Runtime 1.28.2 CPU, MIT; license and third-party notices are included.
+The pinned CPU source selection and CMake dependency archives are supplied in the
+source ZIP under resources/tts/licenses/sources. Their original licenses remain intact. BUILDING.md records
+build controls, archive verification and the validation boundary.
+MeloTTS Chinese+English female voice, MIT (MyShell.ai, 2024).
+Converted model: https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-melo-tts-zh_en.tar.bz2
+Original model: https://huggingface.co/myshell-ai/MeloTTS-Chinese
+We distribute the actual FP32 model.onnx, not the non-executable Git LFS pointer
+called model.int8.onnx in the source archive. Engine/model hashes are in manifest.json.
+
+Both language choices use this one bilingual voice. Teacher audition is still
+needed for context-sensitive pronunciations, abbreviations and teaching style.
+Speech generation is not semantic lesson planning or student assessment.

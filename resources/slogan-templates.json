@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "ahui",
+  "templates": [
+    {
+      "id": "opening-01",
+      "purpose": "opening",
+      "language": "zh-CN",
+      "text": "准备好，跟着节奏开口。"
+    },
+    {
+      "id": "opening-02",
+      "purpose": "opening",
+      "language": "zh-CN",
+      "text": "看清词语，听示范，再跟读。"
+    },
+    {
+      "id": "opening-03",
+      "purpose": "opening",
+      "language": "zh-CN",
+      "text": "本次练习{{wordCount}}个词语，一起开始。"
+    },
+    {
+      "id": "transition-01",
+      "purpose": "transition",
+      "language": "zh-CN",
+      "text": "调整呼吸，进入下一组。"
+    },
+    {
+      "id": "transition-02",
+      "purpose": "transition",
+      "language": "zh-CN",
+      "text": "保持节奏，继续练习。"
+    },
+    {
+      "id": "transition-03",
+      "purpose": "transition",
+      "language": "zh-CN",
+      "text": "回想刚才的词语，准备下一组。"
+    },
+    {
+      "id": "closing-01",
+      "purpose": "closing",
+      "language": "zh-CN",
+      "text": "练习完成，回顾今天的重点词。"
+    },
+    {
+      "id": "closing-02",
+      "purpose": "closing",
+      "language": "zh-CN",
+      "text": "本轮结束，选出还想再练的词语。"
+    },
+    {
+      "id": "closing-03",
+      "purpose": "closing",
+      "language": "zh-CN",
+      "text": "收好今天的词汇，下一次继续开口。"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+[
+  {
+    "name": "aria-hidden-1.2.6.zip",
+    "source": "https://codeload.github.com/theKashey/aria-hidden/zip/720e8a8e1cfa047bd299a929d95d47ac860a5c1a",
+    "sha256": "682eb8d17c5bce6e62f5a1e897a5fb048bda668cf19866f4858e30b54a93dd57",
+    "packages": [
+      "aria-hidden@1.2.6"
+    ]
+  },
+  {
+    "name": "detect-node-es-1.1.0.zip",
+    "source": "https://codeload.github.com/thekashey/detect-node/zip/a04ac52015a2052b5006a6f81409fa57987335fb",
+    "sha256": "5d199513abfd6647e30ccfeae81396feb372614ecaca9d6516345b2fd6bce032",
+    "packages": [
+      "detect-node-es@1.1.0"
+    ]
+  },
+  {
+    "name": "fflate-0.8.2.zip",
+    "source": "https://codeload.github.com/101arrowz/fflate/zip/d3243651cb142e3e04f3e4bc037b9e985878f444",
+    "sha256": "5ba33eb17ac1e7607b6d9dc667d5a15dd7fa35b01cc51cae8e616a03ef4e303a",
+    "packages": [
+      "fflate@0.8.2"
+    ]
+  },
+  {
+    "name": "floating-ui-core-1.8.0.zip",
+    "source": "https://codeload.github.com/floating-ui/floating-ui/zip/%40floating-ui%2Fcore%401.8.0",
+    "sha256": "4a5220c63dc91c3b50fefafc91bfcccb723420229785a788d6206004cb3f29e1",
+    "packages": [
+      "@floating-ui/core@1.8.0"
+    ],
+    "include": [
+      "packages/core/",
+      "packages/dom/",
+      "packages/react-dom/",
+      "packages/utils/",
+      "config/"
+    ]
+  },
+  {
+    "name": "floating-ui-dom-1.8.0.zip",
+    "source": "https://codeload.github.com/floating-ui/floating-ui/zip/%40floating-ui%2Fdom%401.8.0",
+    "sha256": "8b12bad42806d7680e70115c6f17f7530ff6e99d2ea48d405f27b38bd578c205",
+    "packages": [
+      "@floating-ui/dom@1.8.0"
+    ],
+    "include": [
+      "packages/core/",
+      "packages/dom/",
+      "packages/react-dom/",
+      "packages/utils/",
+      "config/"
+    ]
+  },
+  {
+    "name": "floating-ui-react-dom-2.1.9.zip",
+    "source": "https://codeload.github.com/floating-ui/floating-ui/zip/%40floating-ui%2Freact-dom%402.1.9",
+    "sha256": "b04415594e882dba10dbb2d07a6f1fe203e8632156ae676334263d8ee291be46",
+    "packages": [
+      "@floating-ui/react-dom@2.1.9"
+    ],
+    "include": [
+      "packages/core/",
+      "packages/dom/",
+      "packages/react-dom/",
+      "packages/utils/",
+      "config/"
+    ]
+  },
+  {
+    "name": "floating-ui-utils-0.2.12.zip",
+    "source": "https://codeload.github.com/floating-ui/floating-ui/zip/%40floating-ui%2Futils%400.2.12",
+    "sha256": "82c27807485c0998c712c319b5e61b32200dcf835b167fd3b95e1082e303078d",
+    "packages": [
+      "@floating-ui/utils@0.2.12"
+    ],
+    "include": [
+      "packages/core/",
+      "packages/dom/",
+      "packages/react-dom/",
+      "packages/utils/",
+      "config/"
+    ]
+  },
+  {
+    "name": "get-nonce-1.0.1.zip",
+    "source": "https://codeload.github.com/theKashey/get-nonce/zip/fe602104915e8a18049dc96dfecbc10a96c03068",
+    "sha256": "8e27dcc972d43d20659aaec5c8cd6236bb316c9333d68a8b451d7bd778176b9c",
+    "packages": [
+      "get-nonce@1.0.1"
+    ]
+  },
+  {
+    "name": "js-tokens-3.0.0.zip",
+    "source": "https://codeload.github.com/lydell/js-tokens/zip/7e3ca86c8f2260b442e477073cceb9c349fc9b5c",
+    "sha256": "f4cb81aae66a9abd7f87ab363636ed8b008fc35f1cf0239524621219849e8452",
+    "packages": [
+      "js-tokens@3.0.0"
+    ]
+  },
+  {
+    "name": "loose-envify-1.4.0.zip",
+    "source": "https://codeload.github.com/zertosh/loose-envify/zip/v1.4.0",
+    "sha256": "bc646219034c1b7eb5629cec1dd7d597230676b024bc65b6ded1502aabbe4236",
+    "packages": [
+      "loose-envify@1.4.0"
+    ]
+  },
+  {
+    "name": "phosphor-react-2.1.10.zip",
+    "source": "https://codeload.github.com/phosphor-icons/react/zip/v2.1.10",
+    "sha256": "a8432be22e84f423b329785a5b08b93ca4c8a0af3eb59a13f91c93c1e22aca1e",
+    "packages": [
+      "@phosphor-icons/react@2.1.10"
+    ],
+    "include": [
+      "src/",
+      "scripts/"
+    ]
+  },
+  {
+    "name": "react-18.3.1.zip",
+    "source": "https://github.com/facebook/react/tree/v18.3.1",
+    "sha256": "49001212f492320ffd06627a85888c63392b69b7140cec5cf19fa87abf50bcfc",
+    "include": [
+      "packages/",
+      "scripts/"
+    ],
+    "archiveUrl": "https://codeload.github.com/facebook/react/zip/refs/tags/v18.3.1"
+  },
+  {
+    "name": "react-remove-scroll-2.7.2.zip",
+    "source": "https://codeload.github.com/theKashey/react-remove-scroll/zip/ef5c312e4c1c6bc5d4cd60b03261d686b8cb165f",
+    "sha256": "aea8d648386b4aab487378ef495b2bcdfd57526eabae7e794c8420b735cda243",
+    "packages": [
+      "react-remove-scroll@2.7.2"
+    ]
+  },
+  {
+    "name": "tauri-api-2.12.4.zip",
+    "source": "https://codeload.github.com/tauri-apps/tauri/zip/tauri-v2.12.4",
+    "sha256": "3f8e71d09b7ec5f2ed4cfd058af82954a21422edd26e7dfb78f747fc9be5a1fb",
+    "packages": [
+      "@tauri-apps/api@2.12.4"
+    ],
+    "include": [
+      "packages/api/",
+      ".scripts/"
+    ]
+  },
+  {
+    "name": "tauri-apps__plugin-dialog-2.8.3.zip",
+    "source": "https://codeload.github.com/tauri-apps/plugins-workspace/zip/44293a5722efcaf27060504e63b17aeba721b40f",
+    "sha256": "1a17adbc7a4c56c8823c8d419e0a3928b7133f0671d3273a9a115be5914db3ae",
+    "packages": [
+      "@tauri-apps/plugin-dialog@2.8.3",
+      "@tauri-apps/plugin-opener@2.7.2"
+    ],
+    "include": [
+      "plugins/dialog/",
+      "plugins/opener/",
+      "shared/",
+      ".scripts/",
+      "packages/"
+    ]
+  },
+  {
+    "name": "tslib-2.8.1.zip",
+    "source": "https://codeload.github.com/Microsoft/tslib/zip/d72d6f70b36286bc3f94a3dda1e64dcb568b1370",
+    "sha256": "b3a96a7dd256c6a324f4124e59736de9a38fdb12b0d323cd6e7324c8e51c745c",
+    "packages": [
+      "tslib@2.8.1"
+    ]
+  },
+  {
+    "name": "use-callback-ref-1.3.3.zip",
+    "source": "https://codeload.github.com/theKashey/use-callback-ref/zip/bd99fd56601f693ecdda88e2d4455cfa03c5689d",
+    "sha256": "74a1337bc3d3d2379d9e934098ffbc6a624302eae22e7f778569b07cc248249b",
+    "packages": [
+      "use-callback-ref@1.3.3"
+    ]
+  },
+  {
+    "name": "use-sidecar-1.1.3.zip",
+    "source": "https://codeload.github.com/theKashey/use-sidecar/zip/0ceffd96208b62a66883fd472fa48a2ccd4acaa8",
+    "sha256": "c4e9bc242b64a3c96ca0ed4e4030a75179ecc6af8928d9c8f53a4172aac4ff24",
+    "packages": [
+      "use-sidecar@1.1.3"
+    ]
+  },
+  {
+    "name": "react-remove-scroll-bar-2.3.8.zip",
+    "source": "https://codeload.github.com/theKashey/react-remove-scroll-bar/zip/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff",
+    "sha256": "e63823031f69e2aad619fb007e323cf71c8a67e86bac6aaf339c8f758514bf65",
+    "packages": [
+      "react-remove-scroll-bar@2.3.8"
+    ],
+    "verification": "Upstream package.json predates the npm patch version; all 8 source modules across these two packages transpile with TypeScript ES5/ESNext/React/importHelpers to exactly the locked npm dist/es2015 JS tokens (comments/whitespace excluded). No source changes inferred from the metadata-only version mismatch."
+  },
+  {
+    "name": "react-style-singleton-2.2.3.zip",
+    "source": "https://codeload.github.com/theKashey/react-style-singleton/zip/0855d4b3478326fda30efff7e0511540be7f57e8",
+    "sha256": "5231fd89b9c24e4fca6dbf6232b5f40561a5fd5f0f846ab6f43453ee488a3b3d",
+    "packages": [
+      "react-style-singleton@2.2.3"
+    ],
+    "verification": "Upstream package.json predates the npm patch version; all 8 source modules across these two packages transpile with TypeScript ES5/ESNext/React/importHelpers to exactly the locked npm dist/es2015 JS tokens (comments/whitespace excluded). No source changes inferred from the metadata-only version mismatch."
+  },
+  {
+    "name": "sheetjs-0.20.3.zip",
+    "source": "https://git.sheetjs.com/sheetjs/sheetjs/src/tag/v0.20.3",
+    "commit": "8a7cfd47bde8258c0d91df6a737bf0136699cdf8",
+    "sha256": "6834a1aa327234684b8f713f95c5e1efd7935f2863910eb046092461db98ff4c",
+    "packages": [
+      "@e965/xlsx@0.20.3"
+    ],
+    "include": [
+      "bits/",
+      "modules/",
+      "misc/",
+      "packages/",
+      "types/",
+      "bin/"
+    ],
+    "verification": "Pinned upstream tag; xlsx.js, xlsx.mjs and LICENSE are byte-identical to the locked npm distribution. Original bits, modules, Makefile and control lists retained.",
+    "tagObject": "f30a4dfd4c994f2c1ce57f6cb0281917bca76e7f",
+    "bundled": true
+  }
+]

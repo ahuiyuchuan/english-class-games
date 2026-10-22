@@ -1,0 +1,22 @@
+{
+  "source": "https://github.com/skywind3000/ECDICT",
+  "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+  "license": "MIT",
+  "filter": "gk tag + explicitly listed supplementary phrases from the same source",
+  "sourceBlobSha1": "c4ade63ea08cf39d9c3475e96929036d64d94c94",
+  "sourceSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "dictionarySha256": "96b1025f5cc649aa611a90aa83304ee2ad8a64026e216e44d5cefb467e5882d5",
+  "processingVersion": "ecg-teaching-review-1",
+  "reviewScope": "所列义项逐项对照固定 ECDICT 原释文，整理词性并保留独立教学含义；未列出的筛选记录仅提供完整参考，不参与单义批量接受。不是官方教材覆盖声明。",
+  "reviewManifestSha256": "99dce80a62c410ba5620ec9463d67110521aef1da14a272b6a66f82565848c2c",
+  "functionWordsVersion": 1,
+  "functionWordCount": 25,
+  "functionWordsSha256": "aaad8d3245e3345f81950198aa1e8e4b0dea208c9326c56d497a7e0698c1a54c",
+  "entryCount": 3711,
+  "wordCount": 3677,
+  "phraseCount": 24,
+  "reviewedWordCount": 24,
+  "independentSenseCount": 34,
+  "referenceRecordCount": 3677,
+  "formIndexPairCount": 6534
+}

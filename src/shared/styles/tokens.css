@@ -1,0 +1,104 @@
+/**
+ * 游戏启动器与节奏课堂共用的设计变量。青色亮边引导行动、青色说明表达智能辅助，
+ * 紫粉只补充装饰；基础值 → 场景语义 → 组件别名，正文与焦点不依赖光效。
+ * @author ahui
+ */
+:root {
+  --blue-700: #245bd6;
+  --blue-800: #1e4db8;
+  --blue-900: #193f9c;
+  --slate-950: #17191f;
+  --slate-900: #20242b;
+  --slate-700: #505967;
+  --slate-500: #67717f;
+  --slate-200: #dde1e6;
+  --white: #ffffff;
+  --background: #070d1a;
+  --surface: #101d32;
+  --surface-raised: #1a2b46;
+  --text: #f3f6ff;
+  --text-muted: #b0bfd6;
+  --primary: #123c50;
+  --on-primary: #e8fbff;
+  --primary-hover: #194f65;
+  --primary-active: #0d303e;
+  --action-edge: #82eaff;
+  --on-accent: #09221b;
+  --selected: #193a4d;
+  --control-border: #7188a7;
+  --divider: #334968;
+  --focus: #8cecff;
+  --ai-surface: #0d303e;
+  --ai-text: #82eaff;
+  --success: #6ee7b7;
+  --success-surface: #102d29;
+  --warning: #f8d184;
+  --warning-surface: #332814;
+  --error: #ffa6b8;
+  --on-error: #20101b;
+  --error-surface: #351c2b;
+  --disabled-bg: #24324a;
+  --disabled-text: #b0bfd6;
+  --ambient-cyan: #60e5ff;
+  --ambient-violet: #b3a0ff;
+  --grid-line: #284465;
+  /* 游戏装饰层：只用于轨道、光束与封面，不替代正文/错误/焦点语义色。 */
+  --game-cyan: #70e8ff;
+  --game-violet: #b3a0ff;
+  --game-pink: #ff93c5;
+  --game-lime: #c6f76b;
+  --game-ink: #070d1a;
+  --game-panel: #101d32;
+  --game-panel-light: #203452;
+  --game-orange: #ffb16b;
+  --game-edge: #030914;
+  --game-shadow: 0 5px 0 var(--game-edge), 0 16px 36px rgb(0 0 0 / 24%);
+  --game-sheen: inset 0 1px 0 rgb(255 255 255 / 10%);
+  --game-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --glow-soft: 0 0 32px color-mix(in srgb, var(--ambient-cyan) 14%, transparent);
+  --motion-fast: 160ms;
+  --motion-enter: 300ms;
+  /* 自然完成的一次性装饰；不会作为操作锁或课堂计时依据。 */
+  --motion-complete: 900ms;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-control: 10px 4px 10px 4px;
+  --radius-panel: 16px 5px 16px 5px;
+  --beat-current: #f2c15d;
+  --on-beat-current: #24211a;
+  font-family: 'Segoe UI', 'Microsoft YaHei UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--background);
+}
+
+/* 课堂共用平台品牌语义；只补充教学阶段色，避免相同按钮在课堂变色。 */
+.classroom,
+[data-theme='classroom'] {
+  --follow: #5eecc8;
+  --on-follow: #09221b;
+  color: var(--text);
+  background: var(--background);
+}
+
+/* 每个场景根重新关联组件别名，嵌套课堂才能采用自己的语义色，
+ * 而不意外继承备课场景已解析的按钮或面板颜色。 */
+:root,
+.classroom,
+[data-theme='classroom'] {
+  --button-bg: var(--primary);
+  --button-border: var(--action-edge);
+  --button-shadow:
+    0 4px 0 var(--game-edge), 0 0 20px color-mix(in srgb, var(--action-edge) 12%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--action-edge) 28%, transparent);
+  --button-text: var(--on-primary);
+  --input-bg: var(--surface);
+  --input-border: var(--control-border);
+  --panel-bg: var(--surface);
+  --panel-border: var(--divider);
+}

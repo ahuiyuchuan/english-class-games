@@ -1,0 +1,27 @@
+node_modules
+dist
+dist-portable
+src-tauri/target
+src-tauri/gen
+target
+pnpm-lock.yaml
+Cargo.lock
+docs
+resources/dictionary
+playwright-report
+test-results
+src/portable/generated
+examples/*.html
+examples/source-audio
+examples/validation
+
+# 发布副本与生成清单由构建脚本管理，不格式化历史验收产物。
+releases/
+validation/
+resources/tts/
+# 保留第三方对应源码与许可的原始字节，不能套用本项目格式后破坏摘要。
+resources/licenses/
+
+resources/source/
+resources/desktop-distribution*/
+resources/source-upstream/

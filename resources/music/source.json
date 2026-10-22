@@ -1,0 +1,16 @@
+{
+  "name": "课堂律动 · 首发背景音乐",
+  "author": "ahui",
+  "license": "CC0-1.0",
+  "generator": "scripts/build-builtin-music.mjs",
+  "sampleRate": 44100,
+  "channels": 1,
+  "bitsPerSample": 16,
+  "bpm": 100,
+  "totalBeats": 64,
+  "firstBeatMs": 0,
+  "loopStartMs": 0,
+  "loopEndMs": 38400,
+  "bytes": 3386924,
+  "sha256": "50c3448f3d6b5f5d1c9eb07af438c1d0f899d45151c9d39772ab8752c67bf511"
+}

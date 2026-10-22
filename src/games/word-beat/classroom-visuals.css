@@ -1,0 +1,844 @@
+/**
+ * 课堂与静态预览共用的游戏舞台。所有层均不接收输入、不占教学布局；
+ * 动效只由 data-active / data-animated 启用，减少动态效果具有最高优先级。
+ * 作者：ahui
+ */
+.ecg-atmosphere {
+  --stage-energy: var(--ambient-cyan);
+  --stage-pink: var(--ambient-pink, #f48acb);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  isolation: isolate;
+}
+
+.ecg-atmosphere[data-phase='follow'] {
+  --stage-energy: var(--ambient-violet);
+}
+
+.ecg-atmosphere-nebula {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 9% 23%, #4c25ad35, transparent 37%),
+    radial-gradient(ellipse at 88% 56%, #006d9830, transparent 38%),
+    radial-gradient(ellipse at 47% 105%, #6a36be3b, transparent 47%),
+    linear-gradient(180deg, #05071900 52%, #080b1f94);
+}
+
+.ecg-atmosphere-halo {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+}
+
+.ecg-atmosphere-halo--cyan {
+  right: -24%;
+  top: -16%;
+  background: radial-gradient(circle, var(--ambient-cyan), transparent 64%);
+}
+
+.ecg-atmosphere-halo--violet {
+  left: -19%;
+  bottom: -34%;
+  background: radial-gradient(circle, var(--ambient-violet), transparent 68%);
+}
+
+/* 光束保留大轮廓，避免用不断闪白或高频频闪制造所谓科技感。 */
+.ecg-atmosphere-beam {
+  position: absolute;
+  width: 22%;
+  height: 120%;
+  top: -16%;
+  background: linear-gradient(180deg, transparent, #66dfff13 35%, #66dfff20 80%, transparent);
+  clip-path: polygon(0 0, 100% 0, 54% 100%, 46% 100%);
+  transform-origin: 50% 100%;
+  opacity: 0.8;
+  animation: ecg-light-sweep 13s ease-in-out infinite alternate paused;
+}
+
+.ecg-atmosphere-beam--left {
+  left: 5%;
+  --beam-angle: -23deg;
+  --beam-drift: -11deg;
+  transform: rotate(var(--beam-angle));
+}
+
+.ecg-atmosphere-beam--right {
+  right: 5%;
+  --beam-angle: 23deg;
+  --beam-drift: 11deg;
+  transform: rotate(var(--beam-angle));
+  background: linear-gradient(180deg, transparent, #a58aff18 35%, #a58aff24 80%, transparent);
+  animation-delay: -6s;
+}
+
+.ecg-atmosphere-horizon {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: 66%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #62ddff65, #a58aff9c, #62ddff65, transparent);
+  box-shadow:
+    0 0 20px #6ad3ff55,
+    0 10px 65px 18px #633bc820;
+}
+
+/* 平面网格经固定透视压缩成为舞台地面；只有内部纹理平移，不改变教学布局。 */
+.ecg-atmosphere-grid {
+  position: absolute;
+  top: 66%;
+  left: -60%;
+  width: 220%;
+  height: 110%;
+  transform: perspective(550px) rotateX(60deg);
+  transform-origin: 50% 0;
+  mask-image: linear-gradient(transparent 0%, #000 12%, #000 55%, transparent 95%);
+  opacity: 0.7;
+}
+
+.ecg-atmosphere-grid::before {
+  content: '';
+  position: absolute;
+  inset: -80px 0;
+  background-image:
+    linear-gradient(#67c9ff28 1px, transparent 1px),
+    linear-gradient(90deg, #857dff33 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: ecg-grid-travel 5s linear infinite paused;
+}
+
+.ecg-atmosphere-reactor {
+  position: absolute;
+  top: 64%;
+  left: 50%;
+  width: min(95vw, 1160px);
+  /* 直接绘制投影后的扁椭圆，不为小段可见弧线合成 1160px 正方形 3D 图层。 */
+  aspect-ratio: 2.65;
+  transform: translate(-50%, -50%);
+  opacity: 0.62;
+}
+
+.ecg-reactor-ring {
+  position: absolute;
+  inset: 5%;
+  border: 2px solid color-mix(in srgb, var(--stage-energy) 30%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 26px color-mix(in srgb, var(--stage-energy) 7%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--stage-energy) 7%, transparent);
+  /* 静态纵向错层保留原地面透视上缘，避免扁环抬高到中央英文；没有 3D 放大面。 */
+  transform: translateY(18%);
+}
+
+.ecg-reactor-ring::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 3px solid transparent;
+  border-top-color: var(--stage-energy);
+  border-bottom-color: color-mix(in srgb, var(--ambient-violet) 75%, transparent);
+  border-radius: inherit;
+  /* 完整轮廓与弧线固定，只有小光点运动；光晕不参与整圈逐帧旋转。 */
+}
+
+.ecg-reactor-ring::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--stage-energy);
+  box-shadow: 0 0 12px var(--stage-energy);
+  transform: translate(-50%, -50%);
+}
+
+/* 旧内核不支持路径时保留顶部静态标记；教学状态绝不依赖装饰是否能运动。 */
+@supports (offset-path: ellipse(50% 50% at 50% 50%)) {
+  .ecg-reactor-ring::after {
+    left: 0;
+    transform: none;
+    offset-path: ellipse(50% 50% at 50% 50%);
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: ecg-reactor-orbit 18s linear infinite paused;
+  }
+}
+
+.ecg-reactor-ring--mid {
+  inset: 14%;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #a58aff78;
+  transform: translateY(8%);
+}
+
+.ecg-reactor-ring--mid::after {
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+.ecg-reactor-ring--inner {
+  inset: 25%;
+  border-color: color-mix(in srgb, var(--stage-energy) 40%, transparent);
+  background: radial-gradient(circle, #55ddf50a, transparent 70%);
+  transform: translateY(4%);
+}
+
+.ecg-reactor-ring--inner::after {
+  animation-duration: 22s;
+}
+
+.ecg-reactor-axis {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--stage-energy), transparent);
+  opacity: 0.3;
+}
+
+.ecg-reactor-pulse {
+  position: absolute;
+  inset: 22%;
+  border: 3px solid var(--stage-energy);
+  border-radius: 50%;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--stage-energy) 45%, transparent);
+  animation: ecg-reactor-energize 650ms cubic-bezier(0.15, 0.65, 0.25, 1) both;
+}
+
+.ecg-atmosphere .ecg-game-particle-field {
+  opacity: 0.9;
+}
+
+/*
+ * 中央阅读区由独立静态柔暗层保护。不要给逐帧更新的全屏 Canvas 加 mask：
+ * 这会让完整画布反复进入遮罩合成，实测产生超过 100ms 的呈现等待。
+ * 只改变装饰的中央对比，保留全部粒子与击拍；教学内容及控件在氛围层之上。
+ */
+.ecg-atmosphere::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 37%, #080b1eaa 9%, #080b1e00 48%);
+}
+
+.ecg-atmosphere-particle {
+  position: absolute;
+  left: var(--particle-x);
+  top: var(--particle-y);
+  display: block;
+  width: 8px;
+  height: 18px;
+  border: 1px solid currentColor;
+  color: var(--ambient-cyan);
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  opacity: 0.52;
+  box-shadow: 0 0 16px color-mix(in srgb, currentColor 30%, transparent);
+  animation: ecg-particle-drift var(--particle-duration) ease-in-out var(--particle-delay) infinite
+    alternate paused;
+}
+
+.ecg-atmosphere-particle:nth-child(2n) {
+  color: var(--ambient-violet);
+}
+
+.ecg-atmosphere-particle--note {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 9px currentColor);
+}
+
+.ecg-atmosphere-particle--note svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ecg-atmosphere[data-active='true'] .ecg-atmosphere-particle,
+.ecg-atmosphere[data-active='true'] .ecg-atmosphere-beam,
+.ecg-atmosphere[data-active='true'] .ecg-atmosphere-grid::before,
+.ecg-atmosphere[data-active='true'] .ecg-reactor-ring::after {
+  animation-play-state: running;
+}
+
+/* 齐读先说明整轮拍数与朗读次数；词槽仍是主体，不让辅助规则挤成第二个工具栏。 */
+.ecg-chorus-guide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(1000px, 100%);
+}
+
+.ecg-chorus-summary {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: clamp(12px, 1.2vw, 16px);
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.ecg-chorus-summary strong {
+  color: var(--game-cyan);
+  font-weight: 700;
+}
+
+/* 最多四个提示槽采用同一组结构；四色区分位置，不表达发音分数或学生表现。 */
+.ecg-beat-trail {
+  --trail-accent: var(--ambient-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  gap: 18px;
+  isolation: isolate;
+}
+
+.ecg-beat-block {
+  --pad-color: var(--ambient-cyan);
+  --pad-offset: 0px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  color: var(--text-muted);
+  border-radius: 14px;
+  transform: translateY(var(--pad-offset));
+  isolation: isolate;
+}
+
+.ecg-beat-block:nth-child(2) {
+  --pad-color: var(--ambient-violet);
+}
+
+.ecg-beat-block:nth-child(3) {
+  --pad-color: var(--game-pink);
+}
+
+.ecg-beat-block:nth-child(4) {
+  --pad-color: var(--game-lime);
+}
+
+.ecg-beat-pad-depth,
+.ecg-beat-pad-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.ecg-beat-pad-depth {
+  transform: translateY(7px);
+  border: 1px solid color-mix(in srgb, var(--pad-color) 38%, #171d40);
+  background: linear-gradient(180deg, #171c3b, color-mix(in srgb, var(--pad-color) 16%, #101126));
+  box-shadow:
+    0 9px 0 #030713,
+    0 13px 20px #03071399;
+  z-index: -1;
+}
+
+.ecg-beat-pad-surface {
+  border: 1px solid color-mix(in srgb, var(--pad-color) 40%, #27304d);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--pad-color) 17%, #131b34),
+    color-mix(in srgb, var(--pad-color) 6%, #0b1024)
+  );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--pad-color) 25%, transparent),
+    inset 0 -3px 0 #05071970;
+  transition:
+    transform 130ms ease-out,
+    border-color 130ms ease-out,
+    box-shadow 130ms ease-out;
+  z-index: 0;
+}
+
+.ecg-beat-number {
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--pad-color) 65%, #e9efff);
+  line-height: 1;
+}
+
+/* 一个词槽代表一次朗读；1/2 等真实基础拍刻度只切换高亮，不重建词语或喷溅。 */
+.ecg-read-caption {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.ecg-read-caption .ecg-beat-number {
+  font-size: 12px;
+}
+
+.ecg-read-beats {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ecg-read-beats > span:not(.ecg-read-beats-unit) {
+  display: inline-grid;
+  place-items: center;
+  min-width: 16px;
+  height: 16px;
+  border-bottom: 2px solid color-mix(in srgb, var(--pad-color) 28%, transparent);
+  border-radius: 3px 3px 0 0;
+}
+
+.ecg-read-beats > [data-reached='true'] {
+  color: color-mix(in srgb, var(--pad-color) 65%, #e9efff);
+}
+
+.ecg-read-beats > [data-current='true'] {
+  color: var(--text);
+  border-bottom-color: var(--pad-color);
+  background: color-mix(in srgb, var(--pad-color) 22%, transparent);
+  font-weight: 800;
+}
+
+.ecg-beat-block[data-reached='true'] .ecg-beat-pad-surface {
+  border-color: color-mix(in srgb, var(--pad-color) 60%, #27304d);
+}
+
+.ecg-beat-trail .ecg-pulse-active {
+  color: var(--text);
+}
+
+.ecg-beat-trail .ecg-pulse-active .ecg-beat-pad-surface {
+  transform: translateY(3px);
+  border-color: var(--pad-color);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--pad-color) 32%, #15203f),
+    color-mix(in srgb, var(--pad-color) 13%, #0b1024)
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--pad-color) 25%, transparent),
+    0 0 32px color-mix(in srgb, var(--pad-color) 32%, transparent),
+    0 10px 32px color-mix(in srgb, var(--pad-color) 15%, transparent),
+    inset 0 2px 0 color-mix(in srgb, var(--pad-color) 65%, #fff);
+}
+
+.ecg-beat-trail--blocks {
+  width: min(1000px, 100%);
+  gap: clamp(16px, 2.4vw, 34px);
+  padding: 22px 12px 32px;
+}
+
+.ecg-beat-trail--blocks::before {
+  content: '';
+  position: absolute;
+  inset: 50% -2% 0;
+  border: 1px solid #7e7bdf5c;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, #55ddf520, #a58aff12, #f48acb15),
+    linear-gradient(180deg, #101a36, #080c21);
+  transform: perspective(550px) rotateX(57deg);
+  transform-origin: 50% 100%;
+  box-shadow:
+    0 8px 0 #060919,
+    0 10px 0 #535d972c,
+    0 16px 40px #0006;
+  z-index: -2;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-block {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: auto;
+  height: clamp(78px, 12vh, 128px);
+  border-radius: 4px 22px 4px 22px;
+  padding: 14px;
+  align-content: center;
+  gap: 10px;
+}
+/* 每拍是一段带刻度的实体跑道；装饰裁切仅作用于表面，不裁教学文字或光击反馈。 */
+.ecg-beat-trail--blocks .ecg-beat-pad-surface {
+  border-width: 2px;
+  background:
+    repeating-linear-gradient(
+        90deg,
+        transparent 0 11px,
+        color-mix(in srgb, var(--pad-color) 30%, transparent) 11px 13px
+      )
+      50% calc(100% - 10px) / 68% 3px no-repeat,
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pad-color) 26%, var(--game-panel)),
+      var(--game-ink)
+    );
+  box-shadow:
+    inset 0 5px 0 color-mix(in srgb, var(--pad-color) 65%, var(--game-panel)),
+    inset 0 -8px 0 #0005;
+}
+.ecg-beat-trail--blocks .ecg-beat-pad-depth {
+  border-bottom: 4px solid color-mix(in srgb, var(--pad-color) 65%, var(--game-ink));
+}
+.ecg-beat-trail--blocks .ecg-pulse-active .ecg-beat-pad-surface {
+  background:
+    linear-gradient(
+      115deg,
+      transparent 35%,
+      color-mix(in srgb, var(--pad-color) 35%, transparent) 50%,
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pad-color) 40%, var(--game-panel)),
+      var(--game-panel)
+    );
+  box-shadow:
+    inset 0 5px 0 var(--pad-color),
+    inset 0 -8px 0 #0004,
+    0 0 38px color-mix(in srgb, var(--pad-color) 28%, transparent);
+}
+
+.ecg-beat-trail--blocks .ecg-beat-block:nth-child(1) {
+  --pad-offset: 9px;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-block:nth-child(2) {
+  --pad-offset: -9px;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-block:nth-child(3) {
+  --pad-offset: 7px;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-block:nth-child(4) {
+  --pad-offset: -7px;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-pad-depth {
+  transform: translateY(11px);
+}
+
+.ecg-beat-trail--blocks .ecg-beat-pad-surface::before,
+.ecg-beat-trail--blocks .ecg-beat-pad-surface::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--pad-color);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--pad-color) 50%, transparent);
+  opacity: 0.7;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-pad-surface::after {
+  top: auto;
+  left: auto;
+  bottom: 12px;
+  right: 14px;
+  width: 7px;
+  opacity: 0.4;
+}
+
+.ecg-beat-trail--blocks .ecg-beat-number {
+  font-size: 12px;
+}
+
+.ecg-beat-word {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #f5f8ff;
+  font-size: clamp(15px, 1.8vw, 27px);
+  font-weight: 750;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px #02040f99;
+}
+
+.ecg-beat-word::before {
+  content: attr(data-word);
+}
+
+/* 准备拍垫没有教学词语，放大拍号使其成为可读的节奏提示，避免留下空词槽。 */
+.ecg-beat-trail[data-preparation='true'] .ecg-beat-number {
+  font-size: 24px;
+  margin: 0;
+}
+
+.ecg-beat-trail[data-animated='true']
+  .ecg-beat-block[data-reached='true']
+  .ecg-beat-word[data-word]:not([data-word='']) {
+  animation: ecg-word-land 340ms cubic-bezier(0.16, 1.2, 0.3, 1) both;
+}
+
+/* 居中齐读也需要可读的词槽，不能把词语塞进旧模式的数字小拍位。
+ * 保留居中主词的层级；只扩展齐读提示，不改变旧模式或方块舞台。 */
+.ecg-beat-trail--centered[data-chorus='true'] {
+  width: min(800px, 100%);
+  padding: 0 12px 8px;
+}
+
+.ecg-beat-trail--centered[data-chorus='true'] .ecg-beat-block {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: auto;
+  height: 64px;
+  padding: 8px 10px;
+  align-content: center;
+  gap: 6px;
+}
+
+.ecg-beat-trail[data-chorus='true'] .ecg-beat-block[data-reached='false'] .ecg-beat-word {
+  color: #b4c0d6;
+}
+
+/* 一组击打反馈随真实拍序重建；离开当前拍、暂停或关闭特效即销毁。 */
+.ecg-beat-hit {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ecg-beat-impact {
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--pad-color);
+  border-radius: inherit;
+  box-shadow: 0 0 15px color-mix(in srgb, var(--pad-color) 35%, transparent);
+  animation: ecg-beat-ripple 650ms cubic-bezier(0.16, 0.65, 0.3, 1) both;
+}
+
+.ecg-beat-impact--echo {
+  border-width: 1px;
+  animation-delay: 95ms;
+}
+
+.ecg-beat-column {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 45%;
+  height: clamp(80px, 18vh, 180px);
+  background: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--pad-color) 46%, transparent),
+    transparent
+  );
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+  transform-origin: 50% 100%;
+  animation: ecg-beat-light-column 560ms ease-out both;
+}
+
+.ecg-beat-spark {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 4px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--pad-color);
+  box-shadow: 0 0 9px var(--pad-color);
+  animation: ecg-beat-spark-burst 620ms cubic-bezier(0.15, 0.7, 0.3, 1) both;
+}
+
+/* 教师关闭特效时仅更新真实拍位的静态高亮，不残留按压过渡或入场动画。 */
+.ecg-beat-trail[data-animated='false'] * {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes ecg-grid-travel {
+  to {
+    transform: translateY(80px);
+  }
+}
+
+@keyframes ecg-light-sweep {
+  to {
+    transform: rotate(calc(var(--beam-angle) + var(--beam-drift)));
+  }
+}
+
+@keyframes ecg-reactor-orbit {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes ecg-reactor-energize {
+  from {
+    opacity: 0.8;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes ecg-word-land {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(1.09);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ecg-particle-drift {
+  from {
+    transform: translate3d(0, 18px, 0) rotate(-12deg);
+  }
+  to {
+    transform: translate3d(var(--particle-drift), -58px, 0) rotate(16deg);
+  }
+}
+
+@keyframes ecg-beat-ripple {
+  from {
+    opacity: 0.9;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+@keyframes ecg-beat-light-column {
+  from {
+    opacity: 0.8;
+    transform: scaleY(0.2);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes ecg-beat-spark-burst {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scale(0.8);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(var(--spark-x), var(--spark-y), 0) rotate(var(--spark-turn)) scale(0.2);
+  }
+}
+
+/* 小投影窗口保留立体拍台和光效，优先缩减装饰高度而非裁切教学内容。 */
+@media (max-width: 999px), (max-height: 639px) {
+  .ecg-chorus-guide {
+    gap: 2px;
+  }
+  .ecg-read-caption {
+    gap: 7px;
+  }
+  .ecg-read-caption .ecg-beat-number {
+    font-size: 10px;
+  }
+  .ecg-read-beats > span:not(.ecg-read-beats-unit) {
+    min-width: 14px;
+    height: 14px;
+  }
+  .ecg-beat-trail {
+    gap: 12px;
+  }
+  .ecg-beat-block {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+  }
+  .ecg-beat-trail--blocks {
+    width: min(800px, 100%);
+    gap: 18px;
+    padding: 12px 10px 20px;
+  }
+  .ecg-beat-trail--blocks .ecg-beat-block {
+    height: 56px;
+    border-radius: 3px 14px 3px 14px;
+    padding: 6px 10px;
+    gap: 4px;
+  }
+  .ecg-beat-trail--blocks .ecg-beat-block:nth-child(2n) {
+    --pad-offset: -5px;
+  }
+  .ecg-beat-trail--blocks .ecg-beat-block:nth-child(2n + 1) {
+    --pad-offset: 5px;
+  }
+  .ecg-beat-trail--blocks .ecg-beat-pad-surface::before {
+    left: 8px;
+    top: 7px;
+    width: 9px;
+    height: 2px;
+  }
+  .ecg-beat-trail--blocks .ecg-beat-pad-surface::after {
+    bottom: 7px;
+    right: 8px;
+    height: 2px;
+  }
+  .ecg-beat-word {
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+  .ecg-beat-trail--centered[data-chorus='true'] .ecg-beat-block {
+    height: 52px;
+    padding: 5px 8px;
+    gap: 4px;
+  }
+  .ecg-atmosphere-reactor {
+    width: 90vw;
+  }
+  .ecg-atmosphere-halo {
+    opacity: 0.16;
+  }
+}
+
+/* 系统设置覆盖所有会话开关；静态造型、真实拍位与文字完整保留。 */
+@media (prefers-reduced-motion: reduce) {
+  .ecg-atmosphere *,
+  .ecg-atmosphere *::before,
+  .ecg-atmosphere *::after,
+  .ecg-beat-trail * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

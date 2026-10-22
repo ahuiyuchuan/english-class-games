@@ -1,0 +1,329 @@
+{
+  "formatVersion": 1,
+  "productVersion": "1.0.0",
+  "asset": "English-Class-Games-v1.0.0-Desktop-Resources.tar.gz",
+  "bytes": 397729539,
+  "sha256": "ffac260d5f02cd655920bfe3bfe259765410cdaf9db9fed028f5210023ac0fbb",
+  "files": [
+    {
+      "path": "resources/tts/bin/onnxruntime_providers_shared.dll",
+      "bytes": 104960,
+      "sha256": "551d0e1fe4c227d8542314ba718d52f4379e0c7bfe729a37c59833a884e27b4d"
+    },
+    {
+      "path": "resources/tts/bin/onnxruntime.dll",
+      "bytes": 17799168,
+      "sha256": "7f66f939a881baf4f46a2216496798edf4a1429878b646d12674aa62f27d8a25"
+    },
+    {
+      "path": "resources/tts/bin/sherpa-onnx-c-api.dll",
+      "bytes": 4605952,
+      "sha256": "300e0c88400903fc4cfc88be88a8ae587a24cc658653e0e1fd1c2b8dbbc68557"
+    },
+    {
+      "path": "resources/tts/bin/tts-worker.exe",
+      "bytes": 241664,
+      "sha256": "dd2ab77826f9ec136a89f4514b7701cfa0acd04bf69fd76e198cc2a1e3af1d3b"
+    },
+    {
+      "path": "resources/tts/licenses/BUILDING.md",
+      "bytes": 3601,
+      "sha256": "dd58737673b1fc56589843120999044e9c4f8bc8e7c71d33755fa8a77fd0ab67"
+    },
+    {
+      "path": "resources/tts/licenses/espeak-ng-for-piper/espeak-ng-ed530aa113046142eb5115cf2fc9157854d0ffe1_COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "resources/tts/licenses/espeak-ng-for-piper/espeak-ng-ed530aa113046142eb5115cf2fc9157854d0ffe1_src_ucd-tools_COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "resources/tts/licenses/hclust-cpp/hclust-cpp-2026-02-25_LICENSE",
+      "bytes": 1483,
+      "sha256": "e361d842da1d290351860ad6dcce2673a1e42e4f873a3ae1ff4eb92c6adaa882"
+    },
+    {
+      "path": "resources/tts/licenses/kaldi-decoder/kaldi-decoder-0.3.0_LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "resources/tts/licenses/kaldi-native-fbank/kaldi-native-fbank-1.22.3_LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "resources/tts/licenses/kaldifst/kaldifst-1.8.0_LICENSE",
+      "bytes": 11728,
+      "sha256": "a682d6efd1ee5dee08a8e405c233c2c198ea70ae0718129daa83ab58cfe31c5d"
+    },
+    {
+      "path": "resources/tts/licenses/kissfft/kissfft-febd4caeed32e33ad8b2e0bb5ea77542c40f18ec_COPYING",
+      "bytes": 246,
+      "sha256": "a2840585f8411be8e6826a31ef15ae65c950bd74a2437a73b013398a934ad0c6"
+    },
+    {
+      "path": "resources/tts/licenses/MeloTTS-MIT.txt",
+      "bytes": 1053,
+      "sha256": "88a50e5a02bbc2a5c2f084dc19da751aa97b1690f5fda76cd8005c8634d1ca70"
+    },
+    {
+      "path": "resources/tts/licenses/ONNXRuntime-LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "path": "resources/tts/licenses/ONNXRuntime-ThirdPartyNotices.txt",
+      "bytes": 325054,
+      "sha256": "0e07b95f3a8d6230037707c5c4a2b554d12c4cb67369669ac255635528ffcee2"
+    },
+    {
+      "path": "resources/tts/licenses/openfst/openfst-1.8.5-2026-04-10_COPYING",
+      "bytes": 559,
+      "sha256": "4300529197035fd3452350718a0b8cee984e9412c9932d7f35fcde849fc97a4b"
+    },
+    {
+      "path": "resources/tts/licenses/Sherpa-Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "resources/tts/licenses/simple-sentencepiece/simple-sentencepiece-0.7_LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "resources/tts/licenses/sources/espeak-ng-for-piper.zip",
+      "bytes": 18011501,
+      "sha256": "e4e262cbe34f7fe21f91f1ba3397f2728e1f30eafbae7853f2b753a9ed13f0dd"
+    },
+    {
+      "path": "resources/tts/licenses/sources/hclust-cpp.tar.gz",
+      "bytes": 22523,
+      "sha256": "8f14e024c709d73afb40ae69cb22de4b73dba67cbce40f2e518813da8139ab56"
+    },
+    {
+      "path": "resources/tts/licenses/sources/json.tar.gz",
+      "bytes": 9678593,
+      "sha256": "4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187"
+    },
+    {
+      "path": "resources/tts/licenses/sources/kaldi-decoder.tar.gz",
+      "bytes": 51199,
+      "sha256": "b9f34cfb4fd3b1344100eead79ef4d37aa15962274b9e3056de345021f76a1b0"
+    },
+    {
+      "path": "resources/tts/licenses/sources/kaldi-native-fbank.tar.gz",
+      "bytes": 71144,
+      "sha256": "9176cc66fc7ce1edf85cf355b06e320c57db6297df74277f575183468893cf61"
+    },
+    {
+      "path": "resources/tts/licenses/sources/kaldifst.tar.gz",
+      "bytes": 172147,
+      "sha256": "3f247b7e5a2409071202f5e2bc6200060f66728c0a3443c03923ad2723e040b3"
+    },
+    {
+      "path": "resources/tts/licenses/sources/kissfft.zip",
+      "bytes": 74252,
+      "sha256": "497103e664168ebe39580b757adbe616f6cf85a16572af581ca7bc42d0ab13fd"
+    },
+    {
+      "path": "resources/tts/licenses/sources/onnxruntime-1.28.2.zip",
+      "bytes": 27479095,
+      "sha256": "a49ad9a095cb4fa5583ba995cd99348b4006f889e397f97402063886d9f7dccc"
+    },
+    {
+      "path": "resources/tts/licenses/sources/openfst.tar.gz",
+      "bytes": 1500835,
+      "sha256": "c3549940384cbe4fa9f18c2bcfb1bfbd0a80492fd1b0bfa27433cee395a6a199"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-abseil_cpp.zip",
+      "bytes": 3194036,
+      "sha256": "b2bdcf6682d8cb53df365bcc5d6c318a22e55821d9978a10fdb61404c026daff"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-cxxopts.zip",
+      "bytes": 98330,
+      "sha256": "57b5f012372d4c0e0a975b2e534e9af647cd20530fc72f73a75a61e05e0f997e"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-date.zip",
+      "bytes": 941286,
+      "sha256": "f4300b96f7a304d4ef9bf6e0fa3ded72159f7f2d0f605bdde3e030a0dba7cf9f"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-dlpack.zip",
+      "bytes": 228363,
+      "sha256": "14e8b3f03ab7461f56b3fa7ffd4acfb6e6a65f895dc4b50548cab259229afcbd"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-eigen.zip",
+      "bytes": 4075744,
+      "sha256": "6a60d76351f97132669daeeb721d6bf14b008101883ad2d687a3201c5c461eb0"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-extensions.zip",
+      "bytes": 83551041,
+      "sha256": "d0af92533f33344ef7291d18b2cb3300d512650e710f2eaff540519a6a6a2d65"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-flatbuffers.zip",
+      "bytes": 3209602,
+      "sha256": "57bd580c0772fd1a726c34ab8bf05325293bc5f9c165060a898afa1feeeb95e1"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-fp16.zip",
+      "bytes": 91373,
+      "sha256": "e66e65515fa09927b348d3d584c68be4215cfe664100d01c9dbc7655a5716d70"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-fxdiv.zip",
+      "bytes": 16646,
+      "sha256": "3d7b0e9c4c658a84376a1086126be02f9b7f753caa95e009d9ac38d11da444db"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-google_benchmark.zip",
+      "bytes": 327614,
+      "sha256": "39f57865cdbfa06f02ae91ea76465246046cc47d5908aa5a3abeb9026fb73dcc"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-googletest.zip",
+      "bytes": 1114942,
+      "sha256": "40d4ec942217dcc84a9ebe2a68584ada7d4a33a8ee958755763278ea1c5e18ff"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-googlexnnpack.zip",
+      "bytes": 22580852,
+      "sha256": "e4af7bc17f1e0bce0e83098af24c3c3c2ade70351c2e29318aff1404a8974544"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-json.zip",
+      "bytes": 8489998,
+      "sha256": "04022b05d806eb5ff73023c280b68697d12b93e1b7267a0b22a1a39ec7578069"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-microsoft_gsl.zip",
+      "bytes": 84222,
+      "sha256": "c9291d95f5f6e5c561990d06a589b01d89e553d0f366f0ce723dd1788e7a6076"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-microsoft_wil.zip",
+      "bytes": 577341,
+      "sha256": "48f7fdc3c7d0b284efae783c1266836b61b63fd0c94749098a60dc8ec78b0725"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-mimalloc.zip",
+      "bytes": 1301043,
+      "sha256": "23b1bffb2eff57b1e3cb8edc9410d448db2bb43400206a151e107dcabcad773a"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-mp11.zip",
+      "bytes": 232716,
+      "sha256": "81431bdc44c439a324e02c07ed067f8f556419fd86f2d8b486ff568df6aac899"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-onnx.zip",
+      "bytes": 18911779,
+      "sha256": "8dc1181d33529a1249e031226126d0699ac9bdfc571ee530ee3a12f4656f2be3"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-protobuf.zip",
+      "bytes": 7180794,
+      "sha256": "6a31b662deaeb0ac35e6287bda2f3369b19836e6c9f8828d4da444346f420298"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-psimd.zip",
+      "bytes": 8327,
+      "sha256": "dc615342bcbe51ca885323e51b68b90ed9bb9fa7df0f4419dbfa0297d5e837b7"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-pthreadpool.zip",
+      "bytes": 104991,
+      "sha256": "b193fcb18abf0d5bdb989968ccd8e274ae0ce8d89b0f1a61763582fb716b259c"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-pybind11.zip",
+      "bytes": 1112516,
+      "sha256": "e3754d16ea536bdc968ce1464fa822e198a1217881d31bd9bf3d287fed2bbf4c"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-pytorch_cpuinfo.zip",
+      "bytes": 3857758,
+      "sha256": "2ed3ebc6c2656cc0aafc7af319e5cb0f97cc9b415eae180f566def84f1ca6a29"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-re2.zip",
+      "bytes": 451539,
+      "sha256": "a835fe55fbdcd8e80f38584ab22d0840662c67f2feb36bd679402da9641dc71e"
+    },
+    {
+      "path": "resources/tts/licenses/sources/ort-safeint.zip",
+      "bytes": 626378,
+      "sha256": "3ffbd9a2fdff45da77da3e7269e9aa512ea43bed5c38ce8fd8f3d1068a032c3f"
+    },
+    {
+      "path": "resources/tts/licenses/sources/piper-phonemize.zip",
+      "bytes": 9805962,
+      "sha256": "d9cca4e2bdc7d6dd8dffb96a4668283dbd3f77a9c194a3e530c1e8eba9406a5d"
+    },
+    {
+      "path": "resources/tts/licenses/sources/sherpa-onnx-1.13.8.zip",
+      "bytes": 15384893,
+      "sha256": "b63b7613812346f2d1396a3a7f94accd47539e3dadc3ea385ba6474c70ab9897"
+    },
+    {
+      "path": "resources/tts/licenses/sources/simple-sentencepiece.tar.gz",
+      "bytes": 355335,
+      "sha256": "1748a822060a35baa9f6609f84efc8eb54dc0e74b9ece3d82367b7119fdc75af"
+    },
+    {
+      "path": "resources/tts/licenses/sources/source-lock.json",
+      "bytes": 12908,
+      "sha256": "88d3643270aa80c4294071acb1459928ae17569d4bf1d957f86d2c477da08216"
+    },
+    {
+      "path": "resources/tts/licenses/worker/build-tts-worker.ps1",
+      "bytes": 1413,
+      "sha256": "80949d9e3cc52b78251b77be6d8d09cb4be47775b572e01dabd7879183f02eee"
+    },
+    {
+      "path": "resources/tts/licenses/worker/COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "resources/tts/licenses/worker/tts-worker.cpp",
+      "bytes": 3986,
+      "sha256": "604500243a09868252c9d9b68b1a93e04a69921a2499cf2faf11b40020c37508"
+    },
+    {
+      "path": "resources/tts/manifest.json",
+      "bytes": 11334,
+      "sha256": "b56d8bae2c9d8a4a017e9d6fe77160ab3962e63b8e7ee07266a4bf63ec656faa"
+    },
+    {
+      "path": "resources/tts/model/lexicon.txt",
+      "bytes": 6837671,
+      "sha256": "7236884b02435ac5d10cf69b4be40a61b45aa676b5300f0e412f185748fee528"
+    },
+    {
+      "path": "resources/tts/model/model.onnx",
+      "bytes": 170429550,
+      "sha256": "bf30582eb1b012250a35b1a4a80e7dfbcf8485e7bb9de0d95efbbeef0e4ad86d"
+    },
+    {
+      "path": "resources/tts/model/tokens.txt",
+      "bytes": 655,
+      "sha256": "d18664a7e12bd7ea1022ddaf951e534e136815016c5a809d6b64156bffb4369d"
+    },
+    {
+      "path": "resources/tts/NOTICE.txt",
+      "bytes": 2579,
+      "sha256": "4584bb4f545797da2aa9d6d604827929a46fa363ef544ad5ff4a006503cdc083"
+    }
+  ]
+}

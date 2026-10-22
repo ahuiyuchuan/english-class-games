@@ -1,0 +1,5 @@
+# Author: ahui. Keep native compilation reproducible instead of following a floating channel.
+[toolchain]
+channel = "1.99.1"
+profile = "default"
+components = ["rustfmt", "clippy"]
